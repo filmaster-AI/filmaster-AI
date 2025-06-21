@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*build/
+*dist/
+*.egg-info/
+*.so
+
+# Virtual Environment
+venv/
+env/
+.venv/
+*/venv/
+*/env/
+*/.venv/
+
+# IDE & OS specific
+.vscode/
+.idea/
+.DS_Store
+
+# Data & Large Files (根据你的项目添加)
+*.csv
+*.zip
+*.mp4
+data/
+models/
+
+# Logs
+*.log

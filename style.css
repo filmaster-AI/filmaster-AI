@@ -1,0 +1,2245 @@
+
+body {
+    font-family: 'SF Pro', 'Helvetica Neue', 'Arial', sans-serif; /* 增加了更多备用字体 */
+    margin: 0;
+    background-color: #1D1D1D;
+    color: #FFFFFF;
+    overflow-x: hidden; /* Restored */
+    
+}
+
+/* No .page-container rule */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 64px;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    left: 50%;
+    transform: translateX(-50%);
+    /* width: 1920px; */
+    /* max-width: 1920px; Ensure consistency */
+    width: 100%; /* Full width for header */
+    box-sizing: border-box;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Adjust as needed */
+}
+
+.logo img {
+    height: 18px; /* Approximate based on Figma */
+}
+
+.main-nav {
+    display: flex;
+    gap: 64px;
+}
+
+.main-nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 300; /* Figma: 274 */
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+/* 方案二：推荐版 - 在透明的基础上增加交互效果 */
+.icon-btn {
+    background: transparent; /* 确保背景是透明的 */
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0.9;            /* 默认状态下稍微有点透明，看起来更精致 */
+    transition: opacity 0.2s ease, transform 0.2s ease; /* 为悬停效果添加平滑过渡动画 */
+}
+
+/* 当鼠标悬停在按钮上时 */
+.icon-btn:hover {
+    opacity: 1;              /* 恢复完全不透明，产生高亮效果 */
+    transform: scale(1.1);   /* 轻微放大，提供更强的交互感 */
+}
+
+.user-actions img {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+main {
+    padding-top: 98px; /* Space for fixed header */
+    /* Sections inside main will have their own max-width and centering */
+}
+
+#hero {
+    position: relative;
+    /* width: 1920px; Explicit width */
+    /* max-width: 1920px; Reinforce max width */
+    width: 100%; /* Full width for hero section */
+    margin: 0 auto; /* Center hero block */
+    height: 810px; 
+    /* height: 100vh; Full viewport height */
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start; 
+    overflow: hidden; /* Clip any potential overflow */
+}
+
+.hero-bg { 
+    position: absolute;
+    top: 0;
+    bottom: 0; /* Replaces height: 100% */
+    left: 50%; /* Positions the left edge at the center of #hero */
+    width: 100vw; 
+    margin-left: -50vw; /* Shifts the element left by half the viewport width */
+    object-fit: cover;
+    z-index: -1;
+    /* transform: translateX(-50%); Removed */
+    /* will-change: transform; Removed */
+}
+
+.hero-content {
+    padding-left: 64px;
+    max-width: 1150px; 
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 140px; 
+    font-weight: 400; 
+    line-height: 1.05;
+    text-transform: uppercase;
+    margin: 0 0 48px 0;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.hero-text-content {
+    /* Styles for the text block below H1 */
+}
+
+.hero-text-content h2 {
+    font-size: 48px;
+    font-weight: 400; 
+    line-height: 1.17;
+    margin: 0 0 24px 0;
+}
+
+.hero-text-content p {
+    /* font-family: 'Inter', sans-serif; */
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.44;
+    margin: 0 0 48px 0;
+    max-width: 1150px;
+}
+
+.learn-more-btn, .continue-btn, .back-btn {
+    background-color: transparent;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: 400; 
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.learn-more-btn:hover, .continue-btn:hover, .back-btn:hover {
+    background-color: #FFFFFF;
+    color: #1D1D1D;
+}
+
+.continue-btn img, .back-btn img {
+   width: 12px; 
+   height: 12px;
+}
+
+
+#about {
+    max-width: 1005px; /* Figma: 1004.97 */
+    margin: 0 auto; 
+    gap: 64px; 
+    display: flex; 
+    align-items: center; 
+    padding: 80px 64px; 
+    /* Animation properties removed for now to ensure visibility */
+    /*
+    opacity: 0;
+    transform: translateY(30px); 
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    */
+    /* ▼▼▼ 确保有这一行，或者添加它 ▼▼▼ */
+    scroll-margin-top: 120px; /* 这个值应该略大于你header的高度 */
+}
+
+/* Rule for .is-visible removed for now 
+#about.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+*/
+
+#gozilla-input {
+    max-width: 1005px; /* Figma: 1004.97 */
+    margin: 0 auto; 
+    flex-direction: column; 
+    text-align: center;
+    display: flex; /* Added display flex back */
+    align-items: center; /* Added */
+    padding: 80px 64px; /* Added common section padding */
+}
+
+#gozilla-output {
+    max-width: 1080px; /* Figma: 1080 */
+    margin: 0 auto; 
+    flex-direction: column; 
+    text-align: center;
+    display: flex; /* Added display flex back */
+    align-items: center; /* Added */
+    padding: 80px 64px; /* Added common section padding */
+
+    /* ▼▼▼ 在这里添加下面这行代码 ▼▼▼ */
+    scroll-margin-top: 20px; /* 为固定的顶栏预留空间 */
+}
+
+/* ======================================= */
+/*      最终版 #about 区域精修样式         */
+/* ======================================= */
+
+/* 确保 #about 容器本身是 Flex 布局并垂直居中对齐 */
+#about {
+    display: flex;
+    align-items: baseline; /* <-- 改成 'baseline' */
+    /* align-items: center; 确保左右两列垂直居中对齐 */
+    gap: 80px; /* 增加左右两列之间的间距 */
+    max-width: 1920px; /* 可以适当增加最大宽度以容纳内容 */
+    margin: 120px auto; /* 增加上下外边距，让此部分更有呼吸感 */
+    padding: 0 64px;
+}
+
+/* --- 左侧图片样式 --- */
+.about-image {
+    flex: 1 1 55%; /* 让图片容器占据大约55%的宽度，更灵活 */
+
+}
+
+.about-image img {
+    width: 100%;       /* 图片宽度充满其容器 */
+    height: auto;      /* 高度自动，保持比例 */
+    object-fit: contain; /* 确保图片内容完整显示，不裁剪 */
+    display: block;
+}
+
+/* --- 右侧内容区布局 (核心) --- */
+.about-content {
+    flex: 1 1 45%; /* 内容区占据大约45%的宽度 */
+    display: flex;         /* 启用 Flexbox */
+    flex-direction: column; /* 垂直排列子元素 */
+    align-items: flex-start; /* 左对齐所有子元素 */
+    height: 100%; /* 确保它能撑开以进行垂直对齐 */
+}
+
+/* 标题样式微调 */
+.about-content h2 {
+    font-size: 42px; /* 稍微调整字号 */
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+/* 段落样式微调 */
+.about-content p {
+    color: #CECECE;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px; /* 增加与下方卡片的间距 */
+}
+
+/* --- 特性卡片样式 (核心) --- */
+.feature-card {
+    background-color: #2a2a2a; /* 使用深一点的背景色以区分 */
+    border-left: 4px solid #EFBF7B; /* 主题色左边框 */
+    padding: 20px 24px;
+    border-radius: 4px;
+    width: 100%; /* 卡片宽度充满 .about-content */
+    box-sizing: border-box;
+}
+
+/* 制造两个卡片之间的垂直间距 (精髓所在) */
+.feature-card + .feature-card {
+    margin-top: 60px; /* 在第二个卡片上方添加一个大的间距 */
+}
+
+.feature-card h3 {
+    color: #EFBF7B; /* 主题色标题 */
+    font-size: 20px;
+    margin: 0 0 10px 0;
+}
+
+.feature-card p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #b0b0b0;
+    margin-bottom: 0; /* 移除卡片内段落的下外边距 */
+}
+
+/* --- 按钮样式 (核心) --- */
+.about-content .continue-btn {
+    margin-top: auto; /* ！！！自动将按钮推到容器底部 ！！！ */
+    padding-top: 40px;  /* 确保按钮和上面的卡片有足够的距离 */
+    align-self: flex-start; /* 确保按钮自身是左对齐的 */
+    border: none; /* 如果你想要一个更现代的无边框按钮 */
+    background: none;
+    padding-left: 0; /* 移除内边距，使其看起来更像一个链接 */
+    padding-right: 0;
+    text-transform: uppercase;
+}
+
+.about-content .continue-btn:hover {
+    color: #EFBF7B; /* 悬停时变为主题色 */
+    background: none;
+}
+
+/* .about-image video {
+    max-width: 544px; 
+    height: 337px; 
+    object-fit: cover; 
+    display: block;
+    margin-left: auto; 
+    margin-right: auto; 
+} */
+
+
+.godzilla-image-container {
+    width: 100%; 
+    margin-bottom: 32px;
+}
+
+
+#gozilla-input .godzilla-image-container img {
+     object-fit: fit; 
+     width: 1005px; 
+     height: 337px; 
+     max-width: 100%; 
+     display: block; /* Ensure block for margin auto */
+     margin-left: auto; /* Center image */
+     margin-right: auto; /* Center image */
+}
+
+#gozilla-output .godzilla-image-container video {
+     object-fit: cover; 
+     width: 1080px; 
+     height: 565px; 
+     max-width: 100%; 
+     display: block; /* Ensure block for margin auto */
+     margin-left: auto; /* Center video */
+     margin-right: auto; /* Center video */
+}
+
+
+.about-content, .godzilla-content {
+    max-width: 492px; 
+}
+
+#about h2, #gozilla-output h2 { 
+    font-size: 32px; 
+    font-weight: 300; 
+    line-height: 1.25;
+    margin: 0 0 24px 0;
+    margin-bottom: 32px;
+}
+
+#about p, #gozilla-input p, #gozilla-output p {
+    font-size: 18px;
+    font-weight: 300; 
+    line-height: 1.44;
+    color: #CECECE;
+    margin-bottom: 32px;
+}
+
+
+
+/* #part-c-content, #part-d-content, #part-e-content, #part-f-content, #screen-01-part-c { */
+#part-c-content, #part-d-content, #part-e-content, #part-f-content, #part-g-content {
+    padding: 80px 64px;
+    max-width: 1313px; 
+    margin: 0 auto; 
+}
+
+#screen-01-part-c, #screen-01-part-d, #screen-01-part-e, #screen-01-part-f, #screen-01-part-g {
+    display: flex; /* 使用 Flexbox 来帮助内容居中 */
+    flex-direction: column; /* 导航栏和内容垂直排列 */
+    align-items: center; /* 使 .abstract-content-container 水平居中 */
+}
+
+.tabs-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0; 
+    margin-bottom: 48px;
+}
+
+.tab-btn {
+    background-color: #1D1D1D;
+    color: #FFFFFF;
+    border: none;
+    border-bottom: 1px solid #1D1D1D;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: 300; 
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    border-bottom: 2px solid #EFBF7B; 
+    color: #EFBF7B;
+}
+
+.tab-btn:not(.active):hover {
+    color: #EFBF7B;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap; 
+}
+
+.card {
+    background-color: #1D1D1D; 
+    width: calc(50% - 12px); 
+    box-sizing: border-box;
+    margin-bottom: 24px; 
+
+
+}
+
+/* .card img, .card video {
+    width: 100%;
+    height: 424px;  
+    object-fit: initial;
+    margin-bottom: 20px; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
+} */
+
+.card img, .card video {
+    width: 100%;
+    height: 424px;  /* Explicit height, replaces auto and max-height */
+    object-fit: cover;
+    margin-bottom: 20px; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+.card-text {
+    padding: 0px; 
+}
+
+.card-text h3 {
+    font-size: 28px; 
+    font-weight: 300; 
+    margin: 0 0 24px 0;
+}
+
+.card-text p {
+    font-size: 28px; 
+    font-weight: 300; 
+    line-height: 1.28;
+    margin-bottom: 24px;
+}
+
+.card-text button {
+    background-color: transparent;
+    color: #FFFFFF;
+    border: none; 
+    padding: 0;
+    font-size: 16px;
+    font-weight: 400; 
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+}
+.card-text button:hover {
+    color: #EFBF7B;
+}
+.card-text button img {
+    width: 12px;
+    height: 12px;
+    margin: 0;
+}
+
+
+.stories-container {
+    margin-top: 80px; 
+}
+
+.stories-container h2 {
+    font-size: 32px;
+    font-weight: 300; 
+    margin-bottom: 48px;
+    text-align: left;
+}
+
+.story-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.story-card {
+    width: calc(33.333% - 16px); 
+}
+
+.story-card img {
+    width: 100%;
+    height: 277px; 
+    object-fit: cover;
+    margin-bottom: 40px;
+    display: block; /* Ensure block for margin auto */
+    margin-left: auto; /* Center image */
+    margin-right: auto; /* Center image */
+}
+
+.story-card .date {
+    font-size: 16px;
+    font-weight: 300; 
+    color: #EFBF7B;
+    margin-bottom: 8px;
+}
+
+.story-card h3 {
+    font-size: 24px;
+    font-weight: 400; 
+    line-height: 1.33;
+}
+
+.signup-section {
+    background-color: #FFFFFF; 
+    color: #1D1D1D; 
+    padding: 80px; 
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.signup-section h2 {
+    font-size: 32px;
+    font-weight: 300; 
+    margin: 0;
+    max-width: 490px;
+    text-align: left;
+}
+
+.signup-section form {
+    max-width: 422px;
+    width: 100%;
+}
+
+.signup-section label {
+    display: block;
+    font-size: 18px;
+    font-weight: 300; 
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.signup-section input[type="email"] {
+    width: calc(100% - 48px);
+    padding: 12px 24px;
+    border: 1px solid #999999;
+    border-radius: 2px;
+    font-size: 18px;
+    font-weight: 300; 
+    color: #646464;
+}
+
+/* ======================================= */
+/*      全新页脚样式 (New Footer Style)      */
+/* ======================================= */
+
+footer {
+    background-color: #151515; /* 比主背景稍亮一点的深灰色 */
+    color: #A0A0A0;           /* 柔和的灰色文字 */
+    padding: 60px 40px;
+    border-top: 1px solid #333;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Part 1: 主要链接区域 --- */
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 50px;
+    flex-wrap: wrap; /* 在小屏幕上换行 */
+}
+
+.footer-logo {
+    flex-basis: 30%;
+    min-width: 250px;
+}
+
+.footer-logo img {
+    height: 24px;
+    margin-bottom: 16px;
+}
+
+.footer-logo p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 60px; /* 列与列之间的间距 */
+    flex-grow: 1;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.link-column h4 {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+}
+
+.link-column a {
+    display: block;
+    color: #A0A0A0;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 12px;
+    transition: color 0.2s ease;
+}
+
+.link-column a:hover {
+    color: #EFBF7B; /* 主题色悬停效果 */
+}
+
+/* --- Part 2: 引用信息 --- */
+.footer-citation {
+    background-color: #1D1D1D;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 40px;
+}
+
+.footer-citation h4 {
+    color: #FFFFFF;
+    margin: 0 0 16px 0;
+    font-size: 16px;
+}
+
+.citation-box {
+    position: relative;
+    background-color: #101010;
+    padding: 16px;
+    border-radius: 6px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    white-space: pre-wrap; /* 自动换行 */
+    line-height: 1.5;
+    color: #BDBDBD;
+}
+
+/* 引用代码块 */
+.citation-box pre {
+    margin: 0;
+}
+.citation-box code {
+    font-family: inherit; /* 继承pre的字体 */
+}
+
+#copy-citation-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background-color: #333;
+    color: #E0E0E0;
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#copy-citation-btn:hover {
+    background-color: #EFBF7B;
+    color: #1D1D1D;
+    border-color: #EFBF7B;
+}
+
+/* --- Part 3: 底部版权和社交 --- */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    border-top: 1px solid #333;
+    font-size: 14px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a img {
+    height: 20px;
+    width: 20px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.social-icons a:hover img {
+    opacity: 1;
+}
+
+/* Animations and Parallax Effects - Placeholder */
+
+
+/* Responsive adjustments - Placeholder */
+@media (max-width: 768px) {
+    header {
+        padding: 16px 32px;
+        /* Adjust width for 1440px centered fixed header on mobile if needed, or go full width */
+        width: 100%; /* Example: full width on mobile */
+        left: 0;
+        transform: none;
+    }
+    .main-nav {
+        display: none; 
+    }
+    #hero h1 {
+        font-size: 60px; 
+    }
+    #hero .hero-content {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    #about, #gozilla-input, #gozilla-output, #part-c-content, #part-d-content, #part-e-content, #part-f-content, #screen-01-part-c {
+        flex-direction: column;
+        padding: 40px 32px;
+        max-width: 100% !important; 
+    }
+    .cards-container .card {
+        width: 100%; 
+    }
+    .story-cards .story-card {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+    .signup-section {
+        flex-direction: column;
+        padding: 40px;
+        gap: 30px;
+    }
+    .signup-section h2 {
+        text-align: center;
+    }
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .social-copyright {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+        max-width: 100%;
+        padding-top: 20px;
+    }
+    #gozilla-input .godzilla-image-container img,
+    #gozilla-output .godzilla-image-container video {
+        width: 100%; 
+        height: auto; 
+    }
+}
+
+@media (max-width: 1024px) {
+    header {
+        /* Adjustments for 1440px fixed centered header on tablet if needed */
+        /* e.g., width: 100%; left:0; transform:none; if it becomes too wide */
+    }
+    .hero-content h1 {
+        font-size: 80px;
+    }
+     .main-nav {
+        gap: 32px;
+    }
+}
+
+#gozilla-output .godzilla-image-container video {
+    width: 100%; 
+    height: auto; 
+}
+
+.hidden-section {
+    display: none !important; /* !important 确保覆盖其他 display 规则 */
+}
+
+.section{
+    text-align: center;
+	font-size: 150%;
+	font-weight: 500;
+}
+
+
+.abstract-content-container {
+    width: 100%;
+    max-width: 1000px; 
+    margin-top: 10px; /* 与上方导航栏的间距 */
+    text-align: center; /* 使容器内部的文本（h2, p）居中 */
+    padding: 20px;      /* 内边距，可选 */
+    box-sizing: border-box;
+}
+
+.abstract-content-container h2 {
+    font-size: 32px; /* 示例字号 */
+    font-weight: 400; /* 或者更粗一些，如 600 */
+    margin-bottom: 24px;
+    color: #FFFFFF; /* 或者你的标题颜色 */
+}
+
+.abstract-content-container p {
+    font-size: 18px; /* 示例字号 */
+    line-height: 1.6; /* 提高可读性 */
+    color: #CECECE; /* 示例段落颜色 */
+    text-align: justify; /* 如果希望段落两端对齐，而不是纯居中 */
+    /* 或者保持 text-align: center; 如果希望每行都居中 */
+    margin-bottom: 16px; /* 段落间距 */
+}
+
+.abstract-content-container p:last-child {
+    margin-bottom: 0;
+}
+
+/* 通用的内容约束容器 */
+.content-wrapper {
+    width: 100%;
+    max-width: 1280px; /*  <-- 这是你希望内容区域的最大宽度，可以根据设计调整，比如 1080px, 1140px, 1280px 等 */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;  /* 在移动端和小屏幕上留出安全边距 */
+    padding-right: 20px; /* 在移动端和小屏幕上留出安全边距 */
+    box-sizing: border-box;
+}
+
+/* 视频轮播容器样式 */
+.video-carousel-container {
+    max-width: 1400px;
+    /* width: 100%; 关键：让它撑满父容器的可用宽度 */
+    margin: 40px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    text-align: center; /* 让导航居中 */
+}
+
+/* 轮播导航（圆点）样式 */
+.carousel-nav {
+    display: inline-flex;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.carousel-dot-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: #CECECE; /* 默认文字颜色 */
+    transition: color 0.3s ease;
+}
+
+/* 隐藏原始的 radio 按钮 */
+.carousel-dot-label input[type="radio"] {
+    display: none;
+}
+
+/* 自定义圆点样式 */
+.carousel-dot-label .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #646464; /* 未选中时的颜色 */
+    transition: background-color 0.3s ease;
+}
+
+/* 选中状态下的圆点和文字样式 */
+.carousel-dot-label input[type="radio"]:checked + .dot {
+    background-color: #EFBF7B; /* 选中时的颜色 */
+}
+
+.carousel-dot-label input[type="radio"]:checked ~ .label-text {
+    color: #FFFFFF; /* 选中时的文字颜色 */
+}
+
+.carousel-dot-label:hover .dot {
+    background-color: #999999;
+}
+.carousel-dot-label:hover .label-text {
+    color: #FFFFFF;
+}
+
+
+/* 轮播内容区和幻灯片样式 */
+.carousel-content {
+    position: relative; /* 为内部绝对定位的幻灯片提供参考 */
+    width: 100%;
+    /* 可以设置一个固定的宽高比，防止切换时页面跳动 */
+    aspect-ratio: 16 / 9; 
+}
+
+.video-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* 默认隐藏 */
+    visibility: hidden; /* 默认不可见 */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    pointer-events: none; /* 隐藏时不可交互 */
+}
+
+.video-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 填满容器 */
+    border-radius: 8px;
+}
+
+/* 通过JS添加的 .active-slide 类来显示幻灯片 */
+.video-slide.active-slide {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* 显示时可交互 */
+}
+
+
+
+
+/* =================================================================== */
+/*        多视频同步轮播 - 终极修复版 (Multi Video Carousel - Final Fix) */
+/* =================================================================== */
+
+.multi-video-carousel {
+    width: 100%;
+    margin: 80px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* --- Prompt 和提示信息 --- */
+.carousel-prompt-display,
+.carousel-info-notice {
+    margin-bottom: 24px;
+    font-size: 15px;
+    color: #CECECE;
+    line-height: 1.6;
+}
+
+
+
+
+
+
+/* 保留这条基础规则即可 */
+.carousel-info-notice p {
+    margin: 0;
+    font-size: 15px;
+    color: #CECECE;
+}
+
+/* ✨ 新增：为行内图标添加样式 ✨ */
+.inline-click-icon {
+    /* 1. 设置尺寸 */
+    width: 18px;
+    height: 18px;
+
+    /* 2. 垂直对齐 (核心) */
+    vertical-align: middle; /* 让图标和文字中线对齐 */
+    position: relative;     /* 允许进行微调 */
+    top: -2px;              /* 向下移动2像素，视觉上更舒服 */
+
+    /* 3. 设置与前后文字的间距 */
+    margin: 0 4px;
+}
+
+/* ✨ 新增：为“点击这里”链接添加醒目样式 ✨ */
+.global-action-link {
+    color: #EFBF7B; /* 使用你的主题黄色，非常醒目 */
+    text-decoration: underline;
+    font-weight: 600; /* 让它比普通文本粗一点 */
+    background-color: rgba(239, 191, 123, 0.15); /* 给链接本身一个淡淡的背景，增加点击区域感 */
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* ✨ 新增：悬停效果，提供更好的交互反馈 ✨ */
+.global-action-link:hover {
+    color: #1D1D1D; /* 反色，形成强烈对比 */
+    background-color: #EFBF7B; /* 背景变为实心黄色 */
+    text-decoration: none; /* 悬停时去掉下划线，更干净 */
+}
+
+
+
+
+.carousel-prompt-display {
+    /* --- 布局和间距保持不变 --- */
+    margin-bottom: 32px;
+    min-height: 80px; /* ✨ 稍微增加最小高度以适应更大的字体 */
+    transition: opacity 0.3s ease;
+    
+    /* --- 文本样式与 .card-text p 保持一致 --- */
+    font-size: 28px;      /* ✨ 核心改动：字体大小改为 28px */
+    font-weight: 300;     /* ✨ 核心改动：字重改为 300 */
+    line-height: 1.28;    /* ✨ 核心改动：行高改为 1.28 */
+    color: #FFFFFF;       /* ✨ 核心改动：将颜色改为纯白，以匹配 .card-text p 的效果 */
+    text-align: left;     /* ✨ 新增：让文本左对齐，而不是继承父元素的居中对齐 */
+    max-width: 90%;       /* ✨ 新增：限制最大宽度，防止文本过长 */
+    margin-left: auto;    /* ✨ 新增：配合max-width实现居中效果 */
+    margin-right: auto;   /* ✨ 新增：配合max-width实现居中效果 */
+}
+
+.carousel-prompt-display p strong {
+    color: #FFFFFF;
+    font-weight: 500;
+}
+.carousel-info-notice {
+    padding: 8px 16px;
+    background-color: rgba(239, 191, 123, 0.1);
+    border: 1px solid rgba(239, 191, 123, 0.3);
+    border-radius: 6px;
+}
+
+/* --- 轮播基础结构 --- */
+.carousel-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+.carousel-slide {
+    display: none;
+}
+.carousel-slide.active {
+    display: block;
+}
+
+
+.carousel-slide .card-content-left1,
+.carousel-slide .card-content-left2,
+.carousel-slide .card-content-right {
+    width: calc(50% - 12px); /* 让左右两部分各自占据一半宽度 */
+    box-sizing: border-box;
+}
+
+/* 确保右侧的视频卡片能正确显示 */
+.carousel-slide .card-content-right .card {
+    width: 100%; /* 让视频卡片充满它的父容器 .card-content-right */
+    /* 高度由 .video-container-hover 自身的规则控制，这里不用写 */
+}
+
+/* (可选) 确保左侧文字和图片网格垂直排列 */
+/* .carousel-slide .card-content-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+} */
+
+/* --- 视频网格和卡片 --- */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.video-item {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+/* ================================================= */
+/* ✨✨✨ 遮罩和悬停效果的核心修复区域 ✨✨✨ */
+/* ================================================= */
+
+/* 1. 链接包裹层 (它负责定位所有内部元素) */
+.video-link-wrapper {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+/* 2. 视频 (作为背景层) */
+.video-link-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    /* 不再需要 position: absolute 和 z-index: -1 */
+}
+
+/* 3. 遮罩层 (使用 ::before 伪元素实现) */
+.video-link-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0; /* 默认隐藏 */
+    transition: opacity 0.3s ease;
+    z-index: 1; /* 确保遮罩在视频之上 */
+}
+
+/* 4. 标题和图标 (内容层) */
+.video-link-wrapper .video-title {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    margin: 0;
+    padding: 4px 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    border-radius: 4px;
+    z-index: 2; /* 确保标题在遮罩之上 */
+}
+
+.click-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    width: 64px;
+    height: 64px;
+    background-image: url('./materials/image/svg/click_white.png'); /* 确认路径 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    z-index: 2; /* 确保图标在遮罩之上 */
+}
+
+/* 5. 悬停效果 */
+.video-link-wrapper:hover::before {
+    opacity: 1; /* ✨ 悬停时显示遮罩 */
+}
+.video-link-wrapper:hover video {
+    transform: scale(1.05); /* ✨ 悬停时放大视频 */
+}
+.video-link-wrapper:hover .click-indicator {
+    opacity: 1; /* ✨ 悬停时显示图标 */
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+/* --- 导航圆点 --- */
+.carousel-dots {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+.carousel-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #646464;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.carousel-dots .dot.active {
+    background-color: #EFBF7B;
+}
+
+
+
+/* ======================================= */
+/*      三视频并列展示区 (Video Showcase)      */
+/* ======================================= */
+
+.video-showcase-container {
+    max-width: 1280px; /* 或者你希望的最大宽度 */
+    margin: 80px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.showcase-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 48px;
+    color: #FFFFFF;
+}
+
+/* 使用 Grid 布局实现三列并排 */
+.video-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 创建三个等宽的列 */
+    gap: 24px; /* 设置卡片之间的间距 */
+}
+
+.showcase-video-card {
+    text-align: center; /* 让上方的标签居中 */
+}
+
+/* 视频上方的标签样式 */
+.video-card-tag {
+    font-size: 16px;
+    font-weight: 400;
+    color: #EFBF7B; /* 使用你的主题黄色 */
+    margin: 0 0 16px 0; /* 与下方视频的间距 */
+    min-height: 24px; /* 设置最小高度防止因文字换行导致不对齐 */
+}
+
+/* 包裹视频的容器，用于控制宽高比和外观 */
+.video-wrapper {
+    width: 100%;
+    position: relative;
+    aspect-ratio: 16 / 9; /* 假设是竖屏视频，可改为 16 / 9 用于横屏 */
+    border-radius: 8px;
+    overflow: hidden; /* 隐藏超出圆角的部分 */
+    background-color: #000; /* 加个黑色背景，防止视频加载时出现白块 */
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 填充整个容器 */
+    display: block;
+}
+
+
+
+/* ======================================= */
+/*      Mini Series 轮播组件样式 (修复版)  */
+/* ======================================= */
+
+.mini-series-carousel {
+    position: relative;
+    width: 100%;
+    /* 移除 overflow: hidden，先让内容能显示出来，方便调试 */
+    overflow: hidden; 
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    width: 100%;
+    flex-shrink: 0;
+    box-sizing: border-box;
+
+    /* 核心改动：让幻灯片本身成为一个 flex 容器，实现两栏布局 */
+    display: flex;
+    gap: 24px; /* 左右两栏的间距 */
+    align-items: center; /* 垂直居中对齐 */
+}
+
+/* 让幻灯片内的卡片各自占据一半宽度 */
+.carousel-slide .card {
+    width: calc(50% - 12px); /* 占据一半宽度并减去gap的一半 */
+    box-sizing: border-box;
+}
+
+/* 确保视频充满其卡片容器 */
+.carousel-slide .card-video-right video {
+    width: 100%;
+    height: auto; /* 高度自动以保持比例 */
+    max-height: 424px; /* 限制最大高度，与之前的设计保持一致 */
+    object-fit: contain;
+    display: block;
+}
+
+/* 确保文字卡片内容正常显示 */
+.carousel-slide .card-text-left p {
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1.28;
+    margin-bottom: 24px;
+}
+
+.carousel-slide .card-text-left button {
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0;
+}
+
+
+/* 圆点导航样式 (保持不变，但再次提供以确保完整) */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    margin-top: 24px;
+}
+
+.carousel-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #646464;
+    margin: 0 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none; padding: 0;
+}
+
+.carousel-dots .dot:hover { background-color: #999999; }
+.carousel-dots .dot.active { background-color: #EFBF7B; }
+
+
+/* ======================================= */
+/*      Gozilla Input/Output 区域新样式    */
+/* ======================================= */
+
+/* 1. "输入"区域的根容器，采用 Flex 布局 */
+.gozilla-input-area {
+    display: flex;
+    justify-content: space-between; /* 两端对齐 */
+    align-items: center;            /* 垂直居中 */
+    gap: 48px;                      /* 左右两部分的间距 */
+    width: 100%;
+    margin-bottom: 12px;            /* 与下方分割线的间距 */
+}
+
+/* 2. 左侧文字内容的容器 */
+.input-text-content {
+    flex-basis: 40%; /* 占据大约 35% 的基础宽度 */
+    flex-shrink: 0;   /* 防止被压缩 */
+}
+
+.input-text-content h2 {
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 16px;
+    color: #FFFFFF;
+}
+
+.input-text-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #CECECE;
+    margin: 0; /* 移除默认的段落外边距 */
+}
+
+/* 3. 右侧图片网格的容器，采用 Grid 布局 */
+.input-image-grid {
+    flex-basis: 65%; /* 占据剩余宽度 */
+    display: grid;
+    /* 创建四列等宽的网格 */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 16px; /* 图片之间的间距 */
+}
+
+/* 4. 图片本身的样式 */
+.input-image-grid img {
+    width: 100%;         /* 图片宽度充满其网格单元 */
+    height: auto;        /* 高度自动，保持比例 */
+    aspect-ratio: 1 / 1; /* 强制为1:1的正方形，如果图片本身不是，可以调整或移除这行 */
+    object-fit: cover;   /* 裁剪图片以填充正方形，保持比例 */
+    border-radius: 8px;  /* 添加圆角 */
+    display: block;      /* 修正图片底部间距问题 */
+    transition: transform 0.3s ease; /* 添加悬停效果 */
+}
+
+.input-image-grid img:hover {
+    transform: scale(1.05); /* 鼠标悬停时轻微放大 */
+}
+
+/* 5. 分割线样式 */
+.section-divider {
+    width: 100%;
+    border: none;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2); /* 半透明的白色线条 */
+    margin: 0 auto 48px; /* 上方无间距，下方与视频的间距 */
+}
+
+/* ======================================= */
+/*      三色高亮系统 (Tri-Color Highlight)   */
+/* ======================================= */
+
+/* --- 1. 文本高亮样式 --- */
+
+/* Godzilla: 暖橙色 */
+.highlight-godzilla {
+    color:#4CB5F5 ; /* 使用明亮的科技蓝 */
+    font-weight: 500;
+}
+
+/* Cybertruck: 科技蓝 */
+.highlight-cybertruck {
+    color: #E77D3C;
+    font-weight: 500;
+}
+
+/* Environment (Desert/Sandstorm): 沙黄色 */
+.highlight-environment {
+    color: #D4AC6A;
+    font-weight: 500;
+}
+
+
+/* --- 2. 图片边框高亮样式 --- */
+
+/* 基础样式 (保持不变) */
+.input-image-grid img {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    border-radius: 8px; /* 确保圆角存在 */
+}
+
+/* 默认边框颜色 */
+.input-image-grid img:nth-child(1) { /* Cybertruck 图片 */
+    border-color: #3A8CBF; 
+}
+.input-image-grid img:nth-child(2) { /* Godzilla 图片 */
+    border-color: #3A8CBF; 
+}
+.input-image-grid img:nth-child(3){ /* Godzilla 图片 */
+    border-color: #B8642F; 
+}
+.input-image-grid img:nth-child(4),
+.input-image-grid img:nth-child(5) { /* Desert 图片 */
+    border-color: #A98B4F;
+}
+
+/* 鼠标悬停效果 */
+.input-image-grid img:hover {
+    transform: scale(1.05);
+}
+
+.input-image-grid img:nth-child(1):hover { /* Cybertruck 悬停 */
+    border-color: #4CB5F5; /* 变为明亮的科技蓝 */
+}
+.input-image-grid img:nth-child(2):hover { /* Godzilla 悬停 */
+    border-color: #4CB5F5; /* 变为明亮的暖橙色 */
+}
+.input-image-grid img:nth-child(3):hover{ /* Godzilla 悬停 */
+    border-color: #E77D3C; /* 变为明亮的暖橙色 */
+}
+.input-image-grid img:nth-child(4):hover,
+.input-image-grid img:nth-child(5):hover { /* Desert 悬停 */
+    border-color: #D4AC6A; /* 变为明亮的沙黄色 */
+}
+
+
+/* ======================================= */
+/*      About区域双按钮布局样式             */
+/* ======================================= */
+
+.about-actions-container {
+    display: flex;         /* 使用 Flex 布局 */
+    align-items: center;   /* 垂直居中对齐 */
+    gap: 64px;             /* 设置两个按钮之间的间距 */
+    margin-top: auto;      /* 保持这个容器在 about-content 的底部 */
+    padding-top: 40px;
+}
+
+/* 为次要按钮定义一个不同的样式 (例如，边框样式而不是实心) */
+.secondary-btn {
+    border: 1px solid #FFFFFF; /* 白色边框 */
+    background-color: transparent; /* 透明背景 */
+    color: #FFFFFF; /* 白色文字 */
+}
+
+/* 次要按钮的悬停效果 */
+.secondary-btn:hover {
+    background-color: #FFFFFF; /* 背景变白 */
+    color: #1D1D1D; /* 文字变黑 */
+}
+
+/* 主要按钮样式微调 (确保它没有边框) */
+.about-actions-container .continue-btn:not(.secondary-btn) {
+    border: none;
+    background: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* ======================================= */
+/*      通用区域标题和副标题样式            */
+/* ======================================= */
+
+/* 区域主标题 (例如 "Explore Our Demos") */
+.section-title {
+    text-align: center;
+    font-size: 42px;    /* 字体大一些 */
+    font-weight: 400;   /* 正常字重 */
+    color: #FFFFFF;
+    margin-top: 80px;   /* 与上方区域的间距 */
+    margin-bottom: 24px; /* 与下方内容的间距 */
+}
+
+/* 区域副标题 (你新增的那句话) */
+.section-subtitle {
+    text-align: center;
+    font-size: 18px;    /* 字体小一些 */
+    font-weight: 300;   /* 字体细一些 */
+    color: #CECECE;     /* 使用柔和的灰色，不抢眼 */
+    max-width: 600px;   /* 限制最大宽度，防止句子太长 */
+    margin: 0 auto 48px auto; /* 上方0间距，左右自动居中，下方与选项卡有48px间距 */
+    line-height: 1.6;   /* 增加行高，提升可读性 */
+}
+
+
+/* ======================================= */
+/*      视频灯箱 (Video Lightbox) 样式     */
+/* ======================================= */
+
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* 半透明黑色背景 */
+    display: none; /* 默认隐藏 */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* 确保在最顶层 */
+    backdrop-filter: blur(8px);
+}
+
+.lightbox-overlay.active {
+    display: flex; /* 点击后显示 */
+}
+
+.lightbox-content {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: 80%;
+}
+
+#lightbox-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 确保视频完整显示 */
+}
+
+#close-lightbox-btn {
+    position: absolute;
+    top: -40px; /* 放在视频框的外面 */
+    right: 0;
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    font-size: 40px;
+    font-weight: 300;
+    cursor: pointer;
+    line-height: 1;
+}
+
+
+/* ======================================= */
+/*      视频卡片布局 - 最终分层修复版      */
+/* ======================================= */
+
+/* 1. 卡片容器 */
+.card.video-container-hover {
+    position: relative;
+    height: 440px;
+    background-color: #1d1d1d;
+    border-radius: 12px;
+    overflow: hidden;
+
+
+}
+
+/* 2. 视频（默认样式） */
+.card.video-container-hover video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* ★ 默认规则：铺满并裁剪 */
+    object-fit: cover; 
+    z-index: 1;
+    display: block;
+
+}
+
+/* ▼▼▼ 从这里开始是核心修改区域 ▼▼▼ */
+
+/* 3. 通用的内容层 (悬浮按钮的容器) */
+/*    我们让它脱离文档流，覆盖在视频之上 */
+/*    同时选择 .video-container-hover 和 .card-fit-content 内部的 overlay */
+.card.video-container-hover .card-action-overlay,
+.card-fit-content .card-action-overlay {
+    position: absolute; /* ★ 关键：让内容层也脱离文档流，浮动起来 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;         /* 确保它在视频层的上方 */
+    
+    /* 使用 Flexbox 来轻松定位内部的按钮 */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* 将按钮对齐到底部 */
+
+    /* 从底部到透明的渐变，让按钮背景更柔和 */
+    background: linear-gradient(to top, #000000b3 0%, #00000000 60%);
+    padding: 24px;
+    box-sizing: border-box;
+
+    /* 默认隐藏，悬停时显示 */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* 4. 通用的悬停效果 */
+/*    当鼠标悬停在任一类型的卡片上时，都显示内容层 */
+.card.video-container-hover:hover .card-action-overlay,
+.card.card-fit-content:hover .card-action-overlay {
+    opacity: 1;
+}
+
+/* 5. 通用的按钮本身的样式 */
+/*    为按钮增加一个从下方滑入的动画 */
+.view-full-video-btn {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #1D1D1D;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    
+    /* 默认在下方，悬停时上移 */
+    transform: translateY(40px);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+/* 6. 通用的按钮悬停动画 */
+/*    当鼠标悬停在任一类型的卡片上时，都触发按钮动画 */
+.card.video-container-hover:hover .view-full-video-btn,
+.card.card-fit-content:hover .view-full-video-btn {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.1s; /* 延迟一点出现，效果更自然 */
+}
+
+/* ▲▲▲ 核心修改区域结束 ▲▲▲ */
+
+/* ======================================================= */
+/*      特殊比例卡片样式 (高度自适应)                      */
+/* ======================================================= */
+
+/* 1. 特殊卡片容器 (.card-fit-content) */
+/*    它本身不需要高度，高度将由内部的视频撑开 */
+.card-fit-content {
+    position: relative; /* 仍然需要作为定位参考点 */
+    overflow: hidden;   /* 隐藏圆角外的部分 */
+    border-radius: 12px;
+    background-color: #000;
+    line-height: 0;     /* 消除 video 底部可能出现的神秘空隙 */
+}
+
+/* 2. 特殊卡片内的视频 */
+.card-fit-content video {
+    width: 100%;
+    height: auto; /* ★ 核心：高度自适应，保持原始比例 */
+    display: block;
+}
+
+
+
+/* --- Feedback Modal --- */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; justify-content: center; align-items: center;
+    z-index: 2000; backdrop-filter: blur(5px);
+}
+.modal-overlay.active { display: flex; }
+.modal-content {
+    background-color: #1D1D1D; border: 1px solid #444;
+    padding: 32px; border-radius: 12px;
+    width: 90%; max-width: 500px; position: relative;
+}
+.modal-content h3 { margin-top: 0; }
+.close-btn {
+    position: absolute; top: 16px; right: 16px;
+    background: none; border: none; font-size: 24px;
+    color: #aaa; cursor: pointer;
+}
+#feedback-form label { display: block; margin: 16px 0 8px; }
+#feedback-form input, #feedback-form textarea {
+    width: 100%; background: #333; border: 1px solid #555;
+    color: #fff; padding: 10px; border-radius: 5px; box-sizing: border-box;
+}
+#feedback-form .submit-btn {
+    margin-top: 24px; background: #EFBF7B; color: #1D1D1D;
+    border: none; padding: 12px 20px; border-radius: 5px;
+    cursor: pointer; font-weight: bold;
+}
+
+/* ======================================================== */
+/*      小王子卡片 - 图片网格的专属样式 (Customized)         */
+/* ======================================================== */
+
+/* 
+ * 首先，我们为卡片内的网格定义一个不同的列数。
+ * 这样它就不会和哥斯拉部分的5列网格冲突。
+ * 使用 `.cards-container .input-image-grid` 这个精确的选择器。
+*/
+
+/* --- 1. 文本高亮样式 --- */
+
+/* Godzilla: 暖橙色 */
+.highlight-scene {
+    color:#3A8CBF ; /* 使用明亮的科技蓝 */
+    font-weight: 500;
+}
+
+/* Cybertruck: 科技蓝 */
+.highlight-prince {
+    color: #B8642F;
+    font-weight: 500;
+}
+
+/* Environment (Desert/Sandstorm): 沙黄色 */
+.highlight-fox{
+    color: #A98B4F;
+    font-weight: 500;
+}
+
+.highlight-rose{
+    color: #EFBF7B;
+    font-weight: 500;
+}
+
+
+
+
+#part-c-content .cards-container .input-image-grid {
+    grid-template-columns: repeat(9, 1fr); /* 比如，我们让它变成4列 */
+    margin-top: 24px;                      /* 和上面的文字留出一些间距 */
+}
+
+
+/*
+ * 接下来，为小王子卡片内的图片网格定义一套全新的、独立的主题高亮颜色。
+ * 同样使用精确选择器，确保这些规则不会影响到哥斯拉部分。
+*/
+
+/* --- 主题颜色 A: 背景 --- */
+/* 默认状态的边框颜色 (稍暗) */
+#part-c-content .input-image-grid img:nth-child(1),
+#part-c-content .input-image-grid img:nth-child(2),
+#part-c-content .input-image-grid img:nth-child(3),
+#part-c-content .input-image-grid img:nth-child(4),
+#part-c-content .input-image-grid img:nth-child(5) {
+    border-color: #3A8CBF; /* 暗红色 */
+}
+/* 悬停状态 */
+#part-c-content .input-image-grid img:nth-child(1):hover,
+#part-c-content .input-image-grid img:nth-child(2):hover,
+#part-c-content .input-image-grid img:nth-child(3):hover,
+#part-c-content .input-image-grid img:nth-child(4):hover,
+#part-c-content .input-image-grid img:nth-child(5):hover {
+    border-color: #3A8CBF; /* 亮红色 */
+}
+
+
+/* --- 主题颜色 B: 人物 --- */
+/* 默认状态 */
+
+
+#part-c-content .input-image-grid img:nth-child(6)
+ {
+    border-color: #B8642F; /* 暗蓝色 */
+}
+
+#part-c-content .input-image-grid img:nth-child(7)
+ {
+    border-color: #A98B4F; /* 暗蓝色 */
+}
+
+#part-c-content .input-image-grid img:nth-child(8) {
+    border-color: #EFBF7B; /* 暗蓝色 */
+}
+/* 悬停状态 */
+
+#part-c-content .input-image-grid img:nth-child(6):hover
+ {
+    border-color: #B8642F; /* 暗蓝色 */
+}
+
+#part-c-content .input-image-grid img:nth-child(7):hover
+ {
+    border-color: #A98B4F; /* 暗蓝色 */
+}
+#part-c-content .input-image-grid img:nth-child(8):hover {
+    border-color: #EFBF7B; /* 亮蓝色 */
+}
+
+/*
+ * 注意：因为我们没有重写 .input-image-grid img 的基础样式
+ * (比如 border-width, transition, border-radius)，
+ * 所以小王子网格的图片会自动继承这些通用样式，我们只需要关心颜色即可。
+*/
+
+
+
+/* ======================================================== */
+/*      insideout卡片 - 图片网格的专属样式 (Customized)         */
+/* ======================================================== */
+
+/* 
+ * 首先，我们为卡片内的网格定义一个不同的列数。
+ * 这样它就不会和哥斯拉部分的5列网格冲突。
+ * 使用 `.cards-container .input-image-grid` 这个精确的选择器。
+*/
+
+/* --- 1. 文本高亮样式 --- */
+
+
+/* Cybertruck: 科技蓝 */
+.highlight-riley {
+    color: #B8642F;
+    font-weight: 500;
+}
+
+/* Environment (Desert/Sandstorm): 沙黄色 */
+.highlight-sadness{
+    color: #A98B4F;
+    font-weight: 500;
+}
+
+.highlight-joy{
+    color: #EFBF7B;
+    font-weight: 500;
+}
+
+.highlight-anxiety{
+    color: #e0be17;
+    font-weight: 500;
+}
+
+
+
+
+#part-d-content .cards-container .input-image-grid {
+    grid-template-columns: repeat(9, 1fr); /* 比如，我们让它变成4列 */
+    margin-top: 24px;                      /* 和上面的文字留出一些间距 */
+}
+
+
+/*
+ * 接下来，为小王子卡片内的图片网格定义一套全新的、独立的主题高亮颜色。
+ * 同样使用精确选择器，确保这些规则不会影响到哥斯拉部分。
+*/
+
+/* --- 主题颜色 A: 背景 --- */
+/* 默认状态的边框颜色 (稍暗) */
+#part-d-content .input-image-grid img:nth-child(1),
+#part-d-content .input-image-grid img:nth-child(2),
+#part-d-content .input-image-grid img:nth-child(3),
+#part-d-content .input-image-grid img:nth-child(4),
+#part-d-content .input-image-grid img:nth-child(5) {
+    border-color: #3A8CBF; /* 暗红色 */
+}
+/* 悬停状态 */
+#part-d-content .input-image-grid img:nth-child(1):hover,
+#part-d-content .input-image-grid img:nth-child(2):hover,
+#part-d-content .input-image-grid img:nth-child(3):hover,
+#part-d-content .input-image-grid img:nth-child(4):hover,
+#part-d-content .input-image-grid img:nth-child(5):hover {
+    border-color: #3A8CBF; /* 亮红色 */
+}
+
+
+/* --- 主题颜色 B: 人物 --- */
+/* 默认状态 */
+
+
+#part-d-content .input-image-grid img:nth-child(6)
+ {
+    border-color: #B8642F; /* 暗蓝色 */
+}
+
+#part-d-content .input-image-grid img:nth-child(7)
+ {
+    border-color: #A98B4F; /* 暗蓝色 */
+}
+
+#part-d-content .input-image-grid img:nth-child(8) {
+    border-color: #EFBF7B; /* 暗蓝色 */
+}
+
+#part-d-content .input-image-grid img:nth-child(9) {
+    border-color: #e0be17; /* 暗蓝色 */
+}
+/* 悬停状态 */
+
+#part-d-content .input-image-grid img:nth-child(6):hover
+ {
+    border-color: #B8642F; /* 暗蓝色 */
+}
+
+#part-d-content .input-image-grid img:nth-child(7):hover
+ {
+    border-color: #A98B4F; /* 暗蓝色 */
+}
+#part-d-content .input-image-grid img:nth-child(8):hover {
+    border-color: #EFBF7B; /* 亮蓝色 */
+}
+#part-d-content .input-image-grid img:nth-child(9):hover {
+    border-color: #e0be17; /* 亮蓝色 */
+}
+
+
+/* ======================================================== */
+/*      nemo1卡片 - 图片网格的专属样式 (Customized)         */
+/* ======================================================== */
+
+/* 
+ * 首先，我们为卡片内的网格定义一个不同的列数。
+ * 这样它就不会和哥斯拉部分的5列网格冲突。
+ * 使用 `.cards-container .input-image-grid` 这个精确的选择器。
+*/
+
+/* --- 1. 文本高亮样式 --- */
+
+
+/* Cybertruck: 科技蓝 */
+.highlight-nemo{
+    color: #B8642F;
+    font-weight: 500;
+}
+
+/* Environment (Desert/Sandstorm): 沙黄色 */
+.highlight-octopus{
+    color: #A98B4F;
+    font-weight: 500;
+}
+
+.highlight-others{
+    color: #EFBF7B;
+    font-weight: 500;
+}
+
+
+
+
+#part-e-content .carousel-slide .input-image-grid {
+    grid-template-columns: repeat(9, 1fr); /* 比如，我们让它变成4列 */
+    margin-top: 24px;                      /* 和上面的文字留出一些间距 */
+}
+
+
+/*
+ * 接下来，为小王子卡片内的图片网格定义一套全新的、独立的主题高亮颜色。
+ * 同样使用精确选择器，确保这些规则不会影响到哥斯拉部分。
+*/
+
+/* --- 主题颜色 A: 背景 --- */
+/* 默认状态的边框颜色 (稍暗) */
+#part-e-content .card-content-left1 .input-image-grid img:nth-child(1),
+#part-e-content .card-content-left1 .input-image-grid img:nth-child(2),
+#part-e-content .card-content-left1 .input-image-grid img:nth-child(3),
+#part-e-content .card-content-left1 .input-image-grid img:nth-child(4){
+    border-color: #3A8CBF; /* 暗红色 */
+}
+/* 悬停状态 */
+#part-e-content .card-content-left1 .input-image-grid img:nth-child(1):hover,
+#part-e-content .card-content-left1 .input-image-grid img:nth-child(2):hover,
+#part-e-content .card-content-left1 .input-image-grid img:nth-child(3):hover,
+#part-e-content .card-content-left1 .input-image-grid img:nth-child(4):hover{
+    border-color: #3A8CBF; /* 亮红色 */
+}
+
+
+/* --- 主题颜色 B: 人物 --- */
+/* 默认状态 */
+
+#part-e-content .card-content-left1 .input-image-grid img:nth-child(5),
+#part-e-content .card-content-left1 .input-image-grid img:nth-child(6)
+ {
+    border-color: #B8642F; /* 暗蓝色 */
+}
+
+#part-e-content .card-content-left1 .input-image-grid img:nth-child(7)
+ {
+    border-color: #A98B4F; /* 暗蓝色 */
+}
+
+#part-e-content .card-content-left1 .input-image-grid img:nth-child(8),
+#part-e-content .card-content-left1 .input-image-grid img:nth-child(9) {
+    border-color: #EFBF7B; /* 暗蓝色 */
+}
+
+/* 悬停状态 */
+#part-e-content .card-content-left1 .input-image-grid img:nth-child(5):hover,
+#part-e-content .card-content-left1 .input-image-grid img:nth-child(6):hover
+ {
+    border-color: #B8642F; /* 暗蓝色 */
+}
+
+#part-e-content .card-content-left1 .input-image-grid img:nth-child(7):hover
+ {
+    border-color: #A98B4F; /* 暗蓝色 */
+}
+#part-e-content .card-content-left1 .input-image-grid img:nth-child(8):hover,
+#part-e-content .card-content-left1 .input-image-grid img:nth-child(9):hover {
+    border-color: #EFBF7B; /* 亮蓝色 */
+}
+
+
+/* ======================================================== */
+/*      nemo2卡片 - 图片网格的专属样式 (Customized)         */
+/* ======================================================== */
+
+/* 
+ * 首先，我们为卡片内的网格定义一个不同的列数。
+ * 这样它就不会和哥斯拉部分的5列网格冲突。
+ * 使用 `.cards-container .input-image-grid` 这个精确的选择器。
+*/
+
+/* --- 1. 文本高亮样式 --- */
+
+
+/* Cybertruck: 科技蓝 */
+
+/* Environment (Desert/Sandstorm): 沙黄色 */
+.highlight-turtle{
+    color: #A98B4F;
+    font-weight: 500;
+}
+
+.highlight-starfish{
+    color: #EFBF7B;
+    font-weight: 500;
+}
+
+
+
+
+#part-e-content .carousel-slide .input-image-grid {
+    grid-template-columns: repeat(9, 1fr); /* 比如，我们让它变成4列 */
+    margin-top: 24px;                      /* 和上面的文字留出一些间距 */
+}
+
+
+/*
+ * 接下来，为小王子卡片内的图片网格定义一套全新的、独立的主题高亮颜色。
+ * 同样使用精确选择器，确保这些规则不会影响到哥斯拉部分。
+*/
+
+/* --- 主题颜色 A: 背景 --- */
+/* 默认状态的边框颜色 (稍暗) */
+#part-e-content .card-content-left2 .input-image-grid img:nth-child(1),
+#part-e-content .card-content-left2 .input-image-grid img:nth-child(2),
+#part-e-content .card-content-left2 .input-image-grid img:nth-child(3){
+    border-color: #3A8CBF; /* 暗红色 */
+}
+/* 悬停状态 */
+#part-e-content .card-content-left2 .input-image-grid img:nth-child(1):hover,
+#part-e-content .card-content-left2 .input-image-grid img:nth-child(2):hover,
+#part-e-content .card-content-left2 .input-image-grid img:nth-child(3):hover{
+    border-color: #3A8CBF; /* 亮红色 */
+}
+
+
+/* --- 主题颜色 B: 人物 --- */
+/* 默认状态 */
+
+#part-e-content .card-content-left2 .input-image-grid img:nth-child(4)
+ {
+    border-color: #B8642F; /* 暗蓝色 */
+}
+
+#part-e-content .card-content-left2 .input-image-grid img:nth-child(5)
+ {
+    border-color: #A98B4F; /* 暗蓝色 */
+}
+
+#part-e-content .card-content-left2 .input-image-grid img:nth-child(6){
+    border-color: #EFBF7B; /* 暗蓝色 */
+}
+
+/* 悬停状态 */
+#part-e-content .card-content-left2 .input-image-grid img:nth-child(4):hover
+ {
+    border-color: #B8642F; /* 暗蓝色 */
+}
+
+#part-e-content .card-content-left2 .input-image-grid img:nth-child(5):hover
+ {
+    border-color: #A98B4F; /* 暗蓝色 */
+}
+#part-e-content .card-content-left2 .input-image-grid img:nth-child(6):hover{
+    border-color: #EFBF7B; /* 亮蓝色 */
+}
+
+
+/* ======================================================== */
+/*      man_footstep卡片 - 图片网格的专属样式 (Customized)         */
+/* ======================================================== */
+
+/* 
+ * 首先，我们为卡片内的网格定义一个不同的列数。
+ * 这样它就不会和哥斯拉部分的5列网格冲突。
+ * 使用 `.cards-container .input-image-grid` 这个精确的选择器。
+*/
+
+/* --- 1. 文本高亮样式 --- */
+
+
+/* Cybertruck: 科技蓝 */
+
+/* Environment (Desert/Sandstorm): 沙黄色 */
+.highlight-man{
+    color: #B8642F;
+    font-weight: 500;
+}
+
+
+
+
+#part-f-content .cards-container .input-image-grid {
+    grid-template-columns: repeat(9, 1fr); /* 比如，我们让它变成4列 */
+    margin-top: 24px;                      /* 和上面的文字留出一些间距 */
+}
+
+
+/*
+ * 接下来，为小王子卡片内的图片网格定义一套全新的、独立的主题高亮颜色。
+ * 同样使用精确选择器，确保这些规则不会影响到哥斯拉部分。
+*/
+
+/* --- 主题颜色 A: 背景 --- */
+/* 默认状态的边框颜色 (稍暗) */
+#part-f-content .input-image-grid img:nth-child(1),
+#part-f-content .input-image-grid img:nth-child(2),
+#part-f-content .input-image-grid img:nth-child(3){
+    border-color: #3A8CBF; /* 暗红色 */
+}
+/* 悬停状态 */
+#part-f-content .input-image-grid img:nth-child(1):hover,
+#part-f-content .input-image-grid img:nth-child(2):hover,
+#part-f-content .input-image-grid img:nth-child(3):hover{
+    border-color: #3A8CBF; /* 亮红色 */
+}
+
+
+/* --- 主题颜色 B: 人物 --- */
+/* 默认状态 */
+
+#part-f-content .input-image-grid img:nth-child(4)
+ {
+    border-color: #B8642F; /* 暗蓝色 */
+}
+
+
+
+/* 悬停状态 */
+#part-f-content .input-image-grid img:nth-child(4):hover
+ {
+    border-color: #B8642F; /* 暗蓝色 */
+}
+
+
+/* ======================================================= */
+/*      全局图片悬停预览框 - JS驱动版                     */
+/* ======================================================= */
+
+.image-tooltip-global {
+    /* --- 定位与层级 --- */
+    position: fixed; /* ★ 使用 fixed 定位，相对于整个浏览器窗口 */
+    z-index: 9999;   /* ★ 确保它在所有元素的最顶层 */
+
+    /* --- 外观 --- */
+    width: 250px;
+    height: 250px;
+    background-color: #1D1D1D;
+    background-size: cover;
+    background-position: center;
+    border: 3px solid #EFBF7B;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    
+    /* --- 初始状态：完全隐藏 --- */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* 隐藏时不可交互 */
+    
+    /* --- 动画效果 --- */
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transform: scale(0.9); /* 出现时有一个轻微的放大动画 */
+}
+
+/* 当JS给它添加 'visible' 类时，它就会显示出来 */
+.image-tooltip-global.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+
+

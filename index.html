@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilMaster</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <!-- 给a标签一个id，例如 "logo-link-to-top" -->
+            <a href="#" id="logo-link-to-top">
+                <img src="./materials/image/flimaster_logo_transparent.png" alt="FilMaster Logo - Go to top">
+            </a>
+            <!-- <img src="./figma_images/icon_36_373.svg" alt="Logo Part 1">
+            <img src="./figma_images/icon_36_372.svg" alt="Logo Part 2">
+            <img src="./figma_images/icon_36_371.svg" alt="Logo Part 3">
+            <img src="./figma_images/icon_36_375.svg" alt="Logo Part 4"> -->
+        </div>
+        <nav class="main-nav">
+            <!-- <a href="https://www.arxiv.org/" target="_blank"> Paper</a> -->
+            <a href="#about"> Overview</a>
+            <!-- <a href="https://github.com" target="_blank">Code</a> -->
+            <a href="#hero" >Code (Coming Soon)</a>
+            <a href="#part-c-content" class="jump-to-center">Results</a>
+            <a href="#screen-01-part-d">Method</a>
+        </nav>
+        <div class="user-actions">
+            <!-- <img src="./figma_images/icon_36_385.svg" alt="Globe Icon"> -->
+            <!-- ▼▼▼ 修改href和添加id，用于跳转到底部 ▼▼▼ -->
+            <a href="#" id="scroll-to-bottom-btn" class="image-link-to-section">
+                <img src="./materials/image/svg/icons8-quote-96.png" alt="Scroll to Bottom">
+            </a>
+            <!-- <img src="./figma_images/icon_36_253.svg" alt="User Icon"> -->
+            <!-- ▼▼▼ 方案三：触发模态框的按钮 ▼▼▼ -->
+            <button id="open-feedback-btn" class="icon-btn" title="Leave Feedback">
+                <img src="./materials/image/svg/message-square_white.svg" alt="Feedback">
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <video class="hero-bg" 
+                   src="./materials/video/gozilla_new_3_compressed.mp4" 
+                   poster="./materials/image/gozilla.png" 
+                   autoplay loop muted playsinline preload="metadata"
+                   alt="Hero Background Video">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-content">
+                <h1>FilMaster<br></h1>
+                <div class="hero-text-content">
+                    <h2>Bridging Cinematic Principles and Generative AI for Automated Film Generation</h2>
+                    <!-- <p>Kaiyi Huang, Yukun Huang, Xintao Wang#, Zinan Lin, Xuefei Ning, Pengfei Wan, Di Zhang, Xihui Liu#</p> -->
+                    <!-- <p>Anonymous Author(s)</p> -->
+                    <button id="hero-learn-more-btn" class="learn-more-btn">Learn more</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="about-image">
+                <h2>What is FilMaster?</h2>
+                <p>TL; DR: FilMaster pioneers AI-driven filmmaking by automating the entire pipeline with <strong>cinematic principles</strong>.</p>
+                
+                <img id="about-image" src="./materials/image/compare.png" alt="Diagram showing the FilMaster workflow from script to post-production">
+
+               
+
+            </div>
+            
+
+            <div class="about-content">
+                <h2>What Makes FilMaster Different? <br><br></h2>
+                <!-- <p>TL; DR <br> FilMaster pioneers AI-driven filmmaking by automating the entire pipeline with <strong>cinematic principles</strong>. It solves key industry limitations through core advancements:</p> -->
+                
+                <!-- 卡片 1: End-to-End Automation -->
+                <div class="feature-card">
+                    <h3>Built-in Cinematic Expertise</h3>
+                    <p>We don't just generate video; we apply cinematic principles in <strong>camera language design</strong>, <strong>cinematic rhythm control</strong> to create high-quality films, including a rich, dynamic audio landscape.
+                    </p>
+                </div>
+
+                <!-- 卡片 2: Cinematic Principles -->
+                <div class="feature-card">
+                    <h3>Fully Automated Production Pipeline</h3>
+                    <p>From script analysis to final render, FilMaster automates the entire process and delivers project files <strong>compatible with professional editing software</strong>.</p>
+                </div>
+
+                <!-- <button class="continue-btn">SEE AN EXAMPLE <img src="./figma_images/icon_I36_162_18_1369.svg" alt="Arrow icon"></button> -->
+                <!-- ▼▼▼ 新增一个按钮容器 ▼▼▼ -->
+                <div class="about-actions-container">
+                    <!-- 第一个按钮：See an Example -->
+                    <button class="continue-btn">EXAMPLE <img src="./figma_images/icon_I36_162_18_1369.svg" alt="Arrow icon"></button>
+
+                    <!-- 第二个按钮：See the Method -->
+                    <button id="see-method-btn" class="continue-btn secondary-btn">METHOD <img src="./figma_images/icon_I36_162_18_1369.svg" alt="Arrow icon"></button>
+                    <button id="see-comparison-btn" class="continue-btn secondary-btn">COMPARISON <img src="./figma_images/icon_I36_162_18_1369.svg" alt="Arrow icon"></button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- <p class="section"><b>Example Input</b></p> -->
+        <!-- <section id="gozilla-input">
+            <div class="godzilla-image-container">
+                
+                 <img src="./figma_images/image_2040_88.png" alt="Godzilla input image">
+            </div>
+        </section> -->
+
+        <!-- <p class="section"><b>Example Output</b></p> -->
+        <section id="gozilla-output">
+            <!-- 1. 新增的“输入”部分容器 -->
+            <div class="gozilla-input-area">
+                <!-- 左侧文字内容 -->
+                <div class="input-text-content">
+                    <!-- <h2>Example Input</h2> -->
+                    <!-- <p>In the vast desert, Godzilla and a lone Cybertruck engaged in a fierce battle, with the beast's footsteps shaking the ground, while the electric truck used its powerful engine and smart tech to desperately escape the endless sandstorm.</p> -->
+                    <p>
+                        In the vast <span class="highlight-environment">desert</span>, 
+                        <span class="highlight-godzilla">Godzilla</span> and a lone 
+                        <span class="highlight-cybertruck">Cybertruck</span> engaged in a fierce battle, 
+                        with the beast's footsteps shaking the ground, 
+                        while the electric truck used its powerful engine and smart tech to 
+                        desperately escape the endless sandstorm.
+                    </p>
+                </div>
+                <!-- 右侧5张图片 -->
+                <div class="input-image-grid">
+                    <img src="./materials/image/example/example1.png" alt="Input Image 1: Script Snippet">
+                    <img src="./materials/image/example/example2.png" alt="Input Image 2: Character Reference">
+                    <img src="./materials/image/example/example3.png" alt="Input Image 3: Style Reference A">
+                    <img src="./materials/image/example/example4.png" alt="Input Image 4: Style Reference B">
+                    <img src="./materials/image/example/example5.png" alt="Input Image 5: Style Reference C">
+                </div>
+            </div>
+
+            <!-- 2. 分割线 (可选，但能增强视觉分隔) -->
+            <hr class="section-divider">
+
+            <div class="godzilla-image-container video-container-hover">
+                <video id="gozilla-output-video"
+                    src="./materials/video/gozilla_new_3_compressed.mp4"
+                    poster="./figma_images/image_2036_75.png"
+                    loop playsinline controls preload="metadata"
+                    alt="Gozilla Output Video">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <!-- <div class="godzilla-content">
+                <button class="back-btn">Back <img src="./figma_images/icon_2063_223.svg" alt="Arrow Right"></button>
+            </div> -->
+        </section>
+        
+        
+        <section id="part-c-content">
+            <!-- <h2 class="section-title">Explore Our Demos</h2>  -->
+            <p class="section"><b>Explore Our Demos</b></p>
+            <nav class="tabs-nav">
+                <button class="tab-btn active">Illustration</button>
+                <button class="tab-btn">Long Script</button>
+                <button class="tab-btn">Mini Series</button>
+                <button class="tab-btn">Emotion-Related</button>
+            </nav>
+            <p class="section-subtitle">A step-by-step visualization of the process from text to final film.</p>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-text">
+                        <p>In their <span class="highlight-scene">space journey</span>, the blond <span class="highlight-prince">Little Prince</span> and the white <span class="highlight-fox">fox</span> met a sad  <span class="highlight-rose">rose</span>, so the Prince gave it a star while the fox imitated the rose shaking its head to make it laugh.</p>
+                        <!-- <button>shown on the right <img src="./figma_images/icon_I36_162_18_1369.svg" alt="Arrow Right"></button> -->
+                    </div>
+                    <!-- ▼▼▼ 在这里添加新的图片网格 ▼▼▼ -->
+                    <div class="input-image-grid">
+                        <img src="./materials/image/demo_reference_images/little_prince/1.png" alt="Little Prince Reference 1">
+                        <img src="./materials/image/demo_reference_images/little_prince/2.png" alt="Little Prince Reference 2">
+                        <img src="./materials/image/demo_reference_images/little_prince/3.png" alt="Little Prince Reference 3">
+                        <img src="./materials/image/demo_reference_images/little_prince/4.png" alt="Little Prince Reference 4">
+                        <img src="./materials/image/demo_reference_images/little_prince/5.png" alt="Little Prince Reference 5">
+                        <img src="./materials/image/demo_reference_images/little_prince/6.png" alt="Little Prince Reference 6">
+                        <img src="./materials/image/demo_reference_images/little_prince/7.png" alt="Little Prince Reference 7">
+                        <img src="./materials/image/demo_reference_images/little_prince/8.png" alt="Little Prince Reference 8">
+                    </div>
+                </div>
+                <!-- ▼▼▼ 修改这个卡片 ▼▼▼ -->
+                <!-- 我们不再需要 .video-container-hover，因为它的样式和新样式冲突 -->
+                <div class="card video-container-hover"> 
+                    <video id="card-video-little-prince"
+                        src="./materials/video/little_prince_resize_video_compressed.mp4"
+                        poster="./figma_images/image_36_164.png"
+                        loop playsinline muted preload="metadata">
+                        Your browser does not support the video tag.
+                    </video>
+                    <!-- 悬浮层结构保持不变 -->
+                    <div class="card-action-overlay">
+                        <a class="view-full-video-btn" 
+                        href="player.html?src=./materials/video/little_prince_resize_video.mp4&title=The Little Prince" 
+                        target="_blank">
+                            View Full Video
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="part-d-content">
+            <nav class="tabs-nav">
+                <button class="tab-btn">Illustration</button>
+                <button class="tab-btn active">Long Script</button>
+                <button class="tab-btn">Mini Series</button>
+                <button class="tab-btn">Emotion-Related</button>
+            </nav>
+            <p class="section-subtitle">Watch how FilMaster handles complex narratives and extended storylines.</p>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-text">
+                        <p>As <span class="highlight-riley">Riley</span> enters <span class="highlight-scene">her teenage years</span>, her mind's Headquarters undergoes a sudden transformation, welcoming new Emotions. <span class="highlight-anxiety">Anxiety</span> takes charge, believing that constant worry will help Riley navigate adolescence, while Envy fuels self-doubt. <span class="highlight-joy">Joy</span>, <span class="highlight-sadness">Sadness</span>, Anger, Fear, and Disgust struggle to adapt as Anxiety's influence grows, sidelining their roles. As Riley faces mounting pressure, the imbalance leads to emotional turmoil. Realizing that Anxiety alone cannot define Riley's experience, the original Emotions work to restore balance. In the end, Riley embraces the complexities of growing up, with both old and new Emotions learning to coexist. (script from film"InsideOut")</p>
+                        <!-- <button>shown on the right <img src="./figma_images/icon_I2040_105_18_1369.svg" alt="Arrow Right"></button> -->
+                    </div>
+                    <!-- ▼▼▼ 在这里添加新的图片网格 ▼▼▼ -->
+                    <div class="input-image-grid">
+                        <!-- 请将下面的 src 替换为你的实际图片路径 -->
+                        <img src="./materials/image/demo_reference_images/Insideout/1.png" alt="Little Prince Reference 1">
+                        <img src="./materials/image/demo_reference_images/Insideout/2.png" alt="Little Prince Reference 2">
+                        <img src="./materials/image/demo_reference_images/Insideout/3.png" alt="Little Prince Reference 3">
+                        <img src="./materials/image/demo_reference_images/Insideout/4.png" alt="Little Prince Reference 4">
+                        <img src="./materials/image/demo_reference_images/Insideout/5.png" alt="Little Prince Reference 5">
+                        <img src="./materials/image/demo_reference_images/Insideout/6.png" alt="Little Prince Reference 6">
+                        <img src="./materials/image/demo_reference_images/Insideout/7.png" alt="Little Prince Reference 7">
+                        <img src="./materials/image/demo_reference_images/Insideout/8.png" alt="Little Prince Reference 8">
+                        <img src="./materials/image/demo_reference_images/Insideout/9.png" alt="Little Prince Reference 8">
+                    </div>
+                </div>
+                <!-- ▼▼▼ 修改这个卡片 ▼▼▼ -->
+                <div class="card video-container-hover">
+                    <video id="card-video-insideout"
+                           src="./materials/video/insideout_compressed.mp4"
+                           poster="./figma_images/image_2040_107.png"
+                           loop playsinline muted preload="metadata"
+                           alt="Inside Out Video Card">
+                        Your browser does not support the video tag.
+                    </video>
+                    <!-- ▼▼▼ 修改这部分 ▼▼▼ -->
+                    <div class="card-action-overlay">
+                        <!-- 将 button 替换为 a 标签 -->
+                        <a class="view-full-video-btn" 
+                        href="player.html?src=./materials/video/insideout.mp4&title=Riley's Teenage Years" 
+                        target="_blank">
+                            View Full Video
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="part-e-content">
+            <nav class="tabs-nav">
+                <button class="tab-btn">Illustration</button>
+                <button class="tab-btn">Long Script</button>
+                <button class="tab-btn active"> Mini Series</button>
+                <button class="tab-btn">Emotion-Related</button>
+            </nav>
+            <p class="section-subtitle">Generating multiple coherent episodes from a series of related prompts.</p>
+            <!-- <div class="cards-container">
+                <div class="card">
+                    <div class="card-text">
+                        <p>Nemo tried to play hide-and-seek but swam straight into an octopus’s hat, getting inked into a little black fish.</p>
+                        <button>shown on the right <img src="./figma_images/icon_I2040_105_18_1369.svg" alt="Arrow Right"></button>
+                    </div>
+                </div>
+                <div class="card">
+                    <video id="card-video-nemo_octopus"
+                           src="./materials/video/nemo_octopus_VO20.mp4"
+                           poster="./figma_images/image_2040_107.png"
+                           loop playsinline controls
+                           alt="Inside Out Video Card">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="card-text">
+                        <h3>Locations</h3>
+                        <button>Explore more <img src="./figma_images/icon_I2040_111_18_1369.svg" alt="Arrow Right"></button>
+                    </div>
+                </div>
+            </div> -->
+            <!-- ▼▼▼ 新的轮播结构从这里开始 ▼▼▼ -->
+
+            <!-- ▼▼▼ 经过优化的轮播结构 ▼▼▼ -->
+            <div class="mini-series-carousel">
+                <div class="carousel-track">
+                    
+                    <!-- ▼▼▼ 幻灯片 1: 正确的、简化的结构 ▼▼▼ -->
+                    <div class="carousel-slide">
+                        
+                        <!-- 1. 左侧内容容器 -->
+                        <div class="card-content-left1">
+                            <!-- 文字部分 -->
+                            <div class="card-text">
+                                <p><span class="highlight-nemo">Nemo</span> tried to play hide-and-seek but swam straight into an <span class="highlight-octopus">octopus</span>'s' hat, getting inked into a little <span class="highlight-nemo">black fish</span>. (<span class="highlight-scene">ocean</span>, <span class="highlight-others">other ocean creatures</span>)</p>
+                            </div>
+                            <!-- 图片网格部分 -->
+                            <div class="input-image-grid">
+                                <img src="./materials/image/demo_reference_images/Nemo_octopus/1.png" alt="Nemo Reference 1">
+                                <img src="./materials/image/demo_reference_images/Nemo_octopus/2.png" alt="Nemo Reference 2">
+                                <img src="./materials/image/demo_reference_images/Nemo_octopus/3.png" alt="Nemo Reference 3">
+                                <img src="./materials/image/demo_reference_images/Nemo_octopus/4.png" alt="Nemo Reference 4">
+                                <img src="./materials/image/demo_reference_images/Nemo_octopus/5.png" alt="Nemo Reference 5">
+                                <img src="./materials/image/demo_reference_images/Nemo_octopus/6.png" alt="Nemo Reference 6">
+                                <img src="./materials/image/demo_reference_images/Nemo_octopus/7.png" alt="Nemo Reference 7">
+                                <img src="./materials/image/demo_reference_images/Nemo_octopus/8.png" alt="Nemo Reference 8">
+                                <img src="./materials/image/demo_reference_images/Nemo_octopus/9.png" alt="Nemo Reference 9">
+                            </div>
+                        </div>
+
+                        <!-- 2. 右侧视频容器 -->
+                        <div class="card-content-right">
+                            <!-- 视频卡片本身，保持这个结构不变 -->
+                            <div class="card video-container-hover"> 
+                                <video src="./materials/video/nemo_octopus_VO20_compressed.mp4" 
+                                    poster="./figma_images/image_2040_107.png" 
+                                    loop muted playsinline preload="metadata" alt="Nemo and Octopus Video">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="card-action-overlay">
+                                    <a class="view-full-video-btn" 
+                                    href="player.html?src=./materials/video/nemo_octopus_VO20.mp4&title=Nemo and the Octopus" 
+                                    target="_blank">
+                                        View Full Video
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!-- ▼▼▼ 幻灯片 2: 正确的、简化的结构 ▼▼▼ -->
+                    <div class="carousel-slide">
+
+                        <!-- 左侧内容容器 -->
+                        <div class="card-content-left2">
+                            <div class="card-text">
+                                <p><span class="highlight-nemo">Nemo</span> raced with a baby <span class="highlight-turtle">turtle</span> but accidentally crashed into a pile of <span class="highlight-starfish">starfish</span>. (<span class="highlight-scene">ocean</span>)</p>
+                            </div>
+                            <div class="input-image-grid">
+                                <img src="./materials/image/demo_reference_images/Nemo_turtle/1.png" alt="Nemo Reference 1">
+                                <img src="./materials/image/demo_reference_images/Nemo_turtle/2.png" alt="Nemo Reference 2">
+                                <img src="./materials/image/demo_reference_images/Nemo_turtle/3.png" alt="Nemo Reference 3">
+                                <img src="./materials/image/demo_reference_images/Nemo_turtle/4.png" alt="Nemo Reference 4">
+                                <img src="./materials/image/demo_reference_images/Nemo_turtle/5.png" alt="Nemo Reference 4">
+                                <img src="./materials/image/demo_reference_images/Nemo_turtle/6.png" alt="Nemo Reference 4">
+                            </div>
+                        </div>
+
+                        <!-- 右侧视频容器 -->
+                        <div class="card-content-right">
+                            <div class="card video-container-hover"> 
+                                <video src="./materials/video/Nemo_turtle_compressed.mp4" 
+                                    poster="./figma_images/image_2040_107.png" 
+                                    loop muted playsinline preload="metadata" alt="Nemo and Turtle Video">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="card-action-overlay">
+                                    <a class="view-full-video-btn" 
+                                    href="player.html?src=./materials/video/Nemo_turtle.mp4&title=Nemo and the Baby Turtle" 
+                                    target="_blank">
+                                        View Full Video
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="carousel-dots"></div>
+            </div>
+
+            <!-- ▲▲▲ 新的轮播结构到这里结束 ▲▲▲ -->
+        </section>
+
+        <section id="part-f-content">
+            <nav class="tabs-nav">
+                <button class="tab-btn">Illustration</button>
+                <button class="tab-btn">Long Script</button>
+                <button class="tab-btn">Mini Series</button>
+                <button class="tab-btn active">Emotion-Related</button>
+            </nav>
+            <p class="section-subtitle">Showcasing the ability to capture and convey specific moods and feelings.</p>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-text">
+                        <p><span class="highlight-man">He</span> quietly heard footsteps outside the door. (<span class="highlight-scene">living room, outside</span>)</p>
+                        <!-- <button>shown on the right <img src="./figma_images/icon_I2040_105_18_1369.svg" alt="Arrow Right"></button> -->
+                    </div>
+                    <div class="input-image-grid">
+                        <img src="./materials/image/demo_reference_images/Man_footstep/1.png" alt="Nemo Reference 1">
+                        <img src="./materials/image/demo_reference_images/Man_footstep/2.png" alt="Nemo Reference 2">
+                        <img src="./materials/image/demo_reference_images/Man_footstep/3.png" alt="Nemo Reference 3">
+                        <img src="./materials/image/demo_reference_images/Man_footstep/4.png" alt="Nemo Reference 4">
+                    </div>
+                </div>
+                <div class="card video-container-hover">
+                    <video id="card-video-man_footstep"
+                           src="./materials/video/man_footstep_compressed.mp4"
+                           poster="./figma_images/image_2040_107.png"
+                           loop playsinline muted preload="metadata"
+                           alt="Inside Out Video Card">
+                        Your browser does not support the video tag.
+                    </video>
+                    <!-- ▼▼▼ 修改这部分 ▼▼▼ -->
+                    <div class="card-action-overlay">
+                        <!-- 将 button 替换为 a 标签 -->
+                        <a class="view-full-video-btn" 
+                        href="player.html?src=./materials/video/man_footstep.mp4&title=He Quietly Heard Footsteps" 
+                        target="_blank">
+                            View Full Video
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div style="height: 90px;"></div> <!-- 空的 div 作为间隔 -->
+
+        <section id="screen-01-part-c">
+            <p class="section"><b>Explore Our Method</b></p>
+             <nav class="tabs-nav">
+                <button class="tab-btn active">Abstract</button>
+                <button class="tab-btn">Method</button>
+                <button class="tab-btn">Comparison</button>
+                <button class="tab-btn">Ablation</button>
+            </nav>
+            <div class="abstract-content-container">
+                <h2>Abstract</h2>
+                <p> AI-driven content creation has shown potential in revolutionizing film production. However, existing film generation systems struggle to understand and implement fundamental cinematic principles and thus fail to generate professional-quality films, particularly lacking diverse and expressive camera language and cinematic rhythm. This often results in templated visuals and unengaging narratives. To address these limitations, we introduce FilMaster, the first end-to-end AI-powered automated film generation system to integrate real-world cinematic principles for professional-grade film generation, yielding editable and industry-standard outputs. FilMaster is built upon two key cinematic principles: (1) learning cinematography from extensive real-world film data and (2) emulating professional, audience-centric post-production workflows. Inspired by these principles, FilMaster incorporates two stages: Reference-Guided Generation Stage which transforms user input to video clips, and Generative Post-Production Stage which transforms raw footage into audiovisual outputs by orchestrating both visual and auditory elements for cinematic rhythms. Our Reference-Guided Generation Stage highlights a Multi-shot Synergized RAG Camera Language Design module to guide the AI system to generate professional and expressive camera language in videos by retrieving reference clips from a vast corpus of 440,000 film clips. Our Generative Post-Production Stage emulates professional post-production by designing an Audience-Centric Cinematic Rhythm Control module, including a Rough Cut assembly, a Fine Cut process informed by simulated audience feedback, for the effective integration of audiovisual elements through video editing and sound design, to achieve engaging content and emotional impact. The whole system is empowered by generative AI models such as (M)LLMs, and video generation models. Furthermore, we introduce FilmEval, a comprehensive benchmark for evaluating AI-generated films across key cinematic dimensions. Extensive experiments demonstrate FilMaster’s superior performance, particularly in sophisticated camera language design and nuanced cinematic rhythm control, paving the way for generative AI in professional filmmaking.
+                </p>
+                <!-- 如果需要，可以添加更多 <p> 标签或其他元素 -->
+            </div>
+        </section>
+
+        <div style="height: 60px;"></div> <!-- 空的 div 作为间隔 -->
+
+        <section id="screen-01-part-d">
+            <nav class="tabs-nav">
+                <button class="tab-btn">Abstract</button>
+                <button class="tab-btn active">Method</button>
+                <button class="tab-btn">Comparison</button>
+                <button class="tab-btn">Ablation</button>
+            </nav>
+            <div class="content-wrapper">
+                <div class="video-carousel-container">
+                    <!-- 1. 切换选项 (已修复ID和for属性) -->
+                    <div class="carousel-nav">
+                        <label for="video-radio-overview" class="carousel-dot-label">
+                            <input type="radio" name="video-selector" id="video-radio-overview" value="overview" checked>
+                            <span class="dot"></span>
+                            <span class="label-text">Overview</span>
+                        </label>
+                        <label for="video-radio-detail1" class="carousel-dot-label">
+                            <input type="radio" name="video-selector" id="video-radio-detail1" value="detail1">
+                            <span class="dot"></span>
+                            <span class="label-text">Part 1: Camera Language Design</span>
+                        </label>
+                        <label for="video-radio-detail2" class="carousel-dot-label">
+                            <input type="radio" name="video-selector" id="video-radio-detail2" value="detail2">
+                            <span class="dot"></span>
+                            <span class="label-text">Part 2: Cinematic Rhythm Control</span>
+                        </label>
+                        <label for="video-radio-detail3" class="carousel-dot-label">
+                            <input type="radio" name="video-selector" id="video-radio-detail3" value="detail3">
+                            <span class="dot"></span>
+                            <span class="label-text">Part 3: Editable Output</span>
+                        </label>
+                    </div>
+
+                    <!-- 2. 视频内容区 (已修复幻灯片ID) -->
+                    <div class="carousel-content">
+                        <!-- Overview 视频 -->
+                        <div class="video-slide" id="slide-overview">
+                            <video id="method-overview-video"
+                                src="./materials/video/method_overview_new_compressed.mp4"
+                                poster="./materials/image/overview_poster.png"
+                                loop muted playsinline controls preload="metadata"
+                                alt="Method Overview Video">
+                                您的浏览器不支持视频标签。
+                            </video>
+                        </div>
+                        <!-- Part 1 视频 -->
+                        <div class="video-slide" id="slide-detail1">
+                            <video id="method-detail-video1"
+                                src="./materials/video/method/part1/part1_compressed.mp4"
+                                poster="./materials/image/detail_poster.png"
+                                loop muted playsinline controls preload="metadata"
+                                alt="Method Detail Video 1">
+                                您的浏览器不支持视频标签。
+                            </video>
+                        </div>
+                        <!-- Part 2 视频 -->
+                        <div class="video-slide" id="slide-detail2">
+                            <video id="method-detail-video2"
+                                src="./materials/video/method/part2/part2_compressed.mp4"
+                                poster="./materials/image/detail_poster.png"
+                                loop muted playsinline controls preload="metadata"
+                                alt="Method Detail Video 2">
+                                您的浏览器不支持视频标签。
+                            </video>
+                        </div>
+                        <!-- Part 3 视频 -->
+                        <div class="video-slide" id="slide-detail3">
+                            <video id="method-detail-video3"
+                                src="./materials/video/method/part3/part3_compressed.mp4"
+                                poster="./materials/image/detail_poster.png"
+                                loop muted playsinline controls preload="metadata"
+                                alt="Method Detail Video 3">
+                                您的浏览器不支持视频标签。
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div style="height: 60px;"></div> <!-- 空的 div 作为间隔 -->
+        
+        <section id="screen-01-part-e">
+             <nav class="tabs-nav">
+                <button class="tab-btn">Abstract</button>
+                <button class="tab-btn">Method</button>
+                <button class="tab-btn active">Comparison</button>
+                <button class="tab-btn">Ablation</button>
+            </nav>
+            <!-- 新的多视频同步轮播容器 -->
+            <div class="multi-video-carousel">
+                <!-- 1. 共享的Prompt文本 -->
+
+                
+                <div class="carousel-info-notice">
+                    <p>
+                        This is a preview. Click on any video <img src="./materials/image/svg/click_white.png" alt="Click icon" class="inline-click-icon"> to view its full version
+                        <!-- , or <a href="#full-video-results" class="global-action-link">click here</a> to see all results. -->
+                    </p>
+                </div>
+                <!-- 1. 新的Prompt显示区域 (这里是空的，JS会把内容放进来) -->
+                <div class="carousel-prompt-display">
+                    <!-- Active prompt will be displayed here by JavaScript -->
+                </div>
+
+
+
+                <!-- 2. 轮播的主体内容区 -->
+                <div class="carousel-slider">
+                    <!-- 第1版 (Slide 1) -->
+                    <div class="carousel-slide" data-slide="1">
+                        <div class="slide-prompt" style="display: none;">
+                            <p> In their space journey, the blond Little Prince and the white fox met a sad rose, so the Prince gave it a star while the fox imitated the rose shaking its head to make it laugh. </p>
+                        </div>
+                        <div class="video-grid">
+                            <!-- Video 1.1 -->
+                            <div class="video-item">
+                                <!-- ✨ 用 <a> 标签包裹住 video 和 title ✨ -->
+                                <a href="player.html?src=./materials/video/comparison/Anim-Director/1.mp4&title=The Little Prince_Anim-Director" target="_blank" class="video-link-wrapper"> 
+                                    <video src="./materials/video/comparison/Anim-Director/1_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                                    <p class="video-title">Anim-Director</p>
+
+                                    <!-- ✨ 新增：用于显示图标的 span ✨ -->
+                                    <!-- ✨ 新的、空的 span，图标将由CSS控制 ✨ -->
+                                    <span class="click-indicator"></span>
+                                </a>
+                            </div>
+                            <!-- Video 1.2 (需要修改成下面的结构) -->
+                            <div class="video-item">
+                                <a href="player.html?src=./materials/video/comparison/MovieAgent/1.mp4&title=The Little Prince_MovieAgent" target="_blank" class="video-link-wrapper">
+                                    <video src="./materials/video/comparison/MovieAgent/1_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                                    <p class="video-title">MovieAgent</p>
+                                    <span class="click-indicator"></span>
+                                </a>
+                            </div>
+
+                            <!-- Video 1.3 (同样需要修改) -->
+                            <div class="video-item">
+                                <a href="player.html?src=./materials/video/comparison/LTX-Studio/1.mp4&title=The Little Prince_LTX-Studio" target="_blank" class="video-link-wrapper">
+                                    <video src="./materials/video/comparison/LTX-Studio/1_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                                    <p class="video-title">LTX-Studio</p>
+                                    <span class="click-indicator"></span>
+                                </a>
+                            </div>
+
+                            <!-- Video 1.4 (同样需要修改) -->
+                            <div class="video-item">
+                                <a href="player.html?src=./materials/video/comparison/Ours/1.mp4&title=The Little Prince_FilMaster (Ours)" target="_blank" class="video-link-wrapper">
+                                    <video src="./materials/video/comparison/Ours/1_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                                    <p class="video-title">FilMaster (Ours)</p>
+                                    <span class="click-indicator"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 第2版 (Slide 2) -->
+                    <div class="carousel-slide" data-slide="2">
+                        <div class="slide-prompt" style="display: none;">
+                            <p> While training his fire wheels in the desert, Nezha got tricked by a talking cactus into trading them for a fake magic lamp.</p>
+                        </div>
+                        <div class="video-grid">
+                            <!-- Video 2.1 -->
+                            <div class="video-item">
+                                <a href="player.html?src=./materials/video/comparison/Anim-Director/2.mp4&title=Nezha_Anim-Director" target="_blank" class="video-link-wrapper">
+                                    <video src="./materials/video/comparison/Anim-Director/2_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                                    <p class="video-title">Anim-Director</p>
+                                    <span class="click-indicator"></span>
+                                </a>
+                            </div>
+                            <!-- Video 2.2 -->
+                            <div class="video-item">
+                                <a href="player.html?src=./materials/video/comparison/MovieAgent/2.mp4&title=Nezha_MovieAgent" target="_blank" class="video-link-wrapper">
+                                    <video src="./materials/video/comparison/MovieAgent/2_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                                    <p class="video-title">MovieAgent</p>
+                                    <span class="click-indicator"></span>
+                                </a>
+                            </div>
+                            <!-- Video 2.3 -->
+                            <div class="video-item">
+                                <a href="player.html?src=./materials/video/comparison/LTX-Studio/2.mp4&title=Nezha_LTX-Studio" target="_blank" class="video-link-wrapper">
+                                    <video src="./materials/video/comparison/LTX-Studio/2_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                                    <p class="video-title">LTX-Studio</p>
+                                    <span class="click-indicator"></span>
+                                </a>
+                            </div>
+                            <!-- Video 2.4 -->
+                            <div class="video-item">
+                                <a href="player.html?src=./materials/video/comparison/Ours/2.mp4&title=Nezha_FilMaster (Ours)" target="_blank" class="video-link-wrapper">
+                                    <video src="./materials/video/comparison/Ours/2_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                                    <p class="video-title">FilMaster (Ours)</p>
+                                    <span class="click-indicator"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 第3版 (Slide 3) -->
+                    <div class="carousel-slide" data-slide="3">
+                        <div class="slide-prompt" style="display: none;">
+                            <!-- 你可能需要为第3版提供一个不同的Prompt -->
+                            <p>To save the boy Yan, the fox spirit became a lantern; a thousand years later, he lit it before a shrine.</p>
+                        </div>
+                        <div class="video-grid">
+                            <!-- Video 3.1 -->
+                            <div class="video-item">
+                                <a href="player.html?src=./materials/video/comparison/Anim-Director/4.mp4&title=Boy Yan_Anim-Director" target="_blank" class="video-link-wrapper">
+                                    <video src="./materials/video/comparison/Anim-Director/4_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                                    <p class="video-title">Anim-Director</p>
+                                    <span class="click-indicator"></span>
+                                </a>
+                            </div>
+                            <!-- Video 3.2 -->
+                            <div class="video-item">
+                                <a href="player.html?src=./materials/video/comparison/MovieAgent/4.mp4&title=Boy Yan_MovieAgent" target="_blank" class="video-link-wrapper">
+                                    <video src="./materials/video/comparison/MovieAgent/4_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                                    <p class="video-title">MovieAgent</p>
+                                    <span class="click-indicator"></span>
+                                </a>
+                            </div>
+                            <!-- Video 3.3 -->
+                            <div class="video-item">
+                                <a href="player.html?src=./materials/video/comparison/LTX-Studio/4.mp4&title=Boy Yan_LTX-Studio" target="_blank" class="video-link-wrapper">
+                                    <video src="./materials/video/comparison/LTX-Studio/4_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                                    <p class="video-title">LTX-Studio</p>
+                                    <span class="click-indicator"></span>
+                                </a>
+                            </div>
+                            <!-- Video 3.4 -->
+                            <div class="video-item">
+                                <a href="player.html?src=./materials/video/comparison/Ours/4.mp4&title=Boy Yan_FilMaster (Ours)" target="_blank" class="video-link-wrapper">
+                                    <video src="./materials/video/comparison/Ours/4_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                                    <p class="video-title">FilMaster (Ours)</p>
+                                    <span class="click-indicator"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 你可以按照这个结构继续添加第4版和第5版 -->
+
+                </div>
+                
+                <!-- 3. 轮播导航圆点 -->
+                <div style="height: 60px;"></div> <!-- 空的 div 作为间隔 -->
+                <div class="carousel-dots">
+                    <!-- JS会自动根据幻灯片数量生成圆点 -->
+                </div>
+
+                <div style="height: 120px;"></div> <!-- 空的 div 作为间隔 -->
+            </div>
+
+        </section>
+
+        <section id="screen-01-part-f">
+             <nav class="tabs-nav">
+                <button class="tab-btn">Abstract</button>
+                <button class="tab-btn">Method</button>
+                <button class="tab-btn">Comparison</button>
+                <button class="tab-btn active">Ablation</button>
+            </nav>
+            
+            <!-- 新的三视频并列展示区 -->
+            <div class="video-showcase-container">
+                
+                <!-- 标题可以保留，也可以移除，根据你的整体设计决定 -->
+                <!-- <h2 class="showcase-title">Ablation Study</h2> -->
+
+                <div class="video-showcase-grid">
+                    
+                    <!-- 视频卡片 1: Baseline -->
+                    <div class="showcase-video-card">
+                        <p class="video-card-tag">Baseline</p>
+                        <div class="video-wrapper">
+                            <video src="./materials/video/ablation/woRAG/1_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                        </div>
+                    </div>
+
+                    <!-- 视频卡片 2: + Camera Language Design -->
+                    <div class="showcase-video-card">
+                        <p class="video-card-tag">+ Camera Language Design</p>
+                        <div class="video-wrapper">
+                            <video src="./materials/video/ablation/wRAG/1_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                        </div>
+                    </div>
+
+                    <!-- 视频卡片 3: + Cinematic Rhythm Control -->
+                    <div class="showcase-video-card">
+                        <p class="video-card-tag">+ Cinematic Rhythm Control</p>
+                        <div class="video-wrapper">
+                            <video src="./materials/video/ablation/wRAG_wPost/1_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-showcase-grid">
+                    <!-- 视频卡片 1: Baseline -->
+                    <div class="showcase-video-card">
+                        <!-- <p class="video-card-tag">Baseline</p> -->
+                        <div class="video-wrapper">
+                            <video src="./materials/video/ablation/woRAG/2_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                        </div>
+                    </div>
+
+                    <!-- 视频卡片 2: + Camera Language Design -->
+                    <div class="showcase-video-card">
+                        <!-- <p class="video-card-tag">+ Camera Language Design</p> -->
+                        <div class="video-wrapper">
+                            <video src="./materials/video/ablation/wRAG/2_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                        </div>
+                    </div>
+
+                    <!-- 视频卡片 3: + Cinematic Rhythm Control -->
+                    <div class="showcase-video-card">
+                        <!-- <p class="video-card-tag">+ Cinematic Rhythm Control</p> -->
+                        <div class="video-wrapper">
+                            <video src="./materials/video/ablation/wRAG_wPost/2_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-showcase-grid">
+                    <!-- 视频卡片 1: Baseline -->
+                    <div class="showcase-video-card">
+                        <!-- <p class="video-card-tag">Baseline</p> -->
+                        <div class="video-wrapper">
+                            <video src="./materials/video/ablation/woRAG/3_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                        </div>
+                    </div>
+
+                    <!-- 视频卡片 2: + Camera Language Design -->
+                    <div class="showcase-video-card">
+                        <!-- <p class="video-card-tag">+ Camera Language Design</p> -->
+                        <div class="video-wrapper">
+                            <video src="./materials/video/ablation/wRAG/3_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                        </div>
+                    </div>
+
+                    <!-- 视频卡片 3: + Cinematic Rhythm Control -->
+                    <div class="showcase-video-card">
+                        <!-- <p class="video-card-tag">+ Cinematic Rhythm Control</p> -->
+                        <div class="video-wrapper">
+                            <video src="./materials/video/ablation/wRAG_wPost/3_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-showcase-grid">
+                    <!-- 视频卡片 1: Baseline -->
+                    <div class="showcase-video-card">
+                        <!-- <p class="video-card-tag">Baseline</p> -->
+                        <div class="video-wrapper">
+                            <video src="./materials/video/ablation/woRAG/4_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                            
+                        </div>
+                    </div>
+
+                    <!-- 视频卡片 2: + Camera Language Design -->
+                    <div class="showcase-video-card">
+                        <!-- <p class="video-card-tag">+ Camera Language Design</p> -->
+                        <div class="video-wrapper">
+                            <video src="./materials/video/ablation/wRAG/4_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                        </div>
+                    </div>
+
+                    <!-- 视频卡片 3: + Cinematic Rhythm Control -->
+                    <div class="showcase-video-card">
+                        <!-- <p class="video-card-tag">+ Cinematic Rhythm Control</p> -->
+                        <div class="video-wrapper">
+                            <video src="./materials/video/ablation/wRAG_wPost/5_compressed.mp4" loop muted autoplay playsinline preload="metadata"></video>
+                        </div>
+                    </div>
+                </div>
+                 <p class="section-subtitle">Extracted from the first 4 shots from "The Little Prince"</p>
+            </div>
+        </section>    
+
+        <div style="height: 60px;"></div> <!-- 空的 div 作为间隔 -->
+
+        <!-- <section id="screen-01-part-g">
+             <nav class="tabs-nav">
+                <button class="tab-btn">Abstract</button>
+                <button class="tab-btn">Method</button>
+                <button class="tab-btn">Comparison</button>
+                <button class="tab-btn active">Ablation</button>
+            </nav>
+            
+
+
+            <div class="cards-container">
+                <div class="card">
+                    <img src="./figma_images/image_36_273.png" alt="Card image">
+                    <div class="card-text">
+                        <h3>Current Offers</h3>
+                        <button>Explore more <img src="./figma_images/icon_I36_276_18_1369.svg" alt="Arrow Right"></button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./figma_images/image_36_278.png" alt="Card image">
+                    <div class="card-text">
+                        <h3>Locations</h3>
+                        <button>Explore more <img src="./figma_images/icon_I36_282_18_1369.svg" alt="Arrow Right"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="stories-container">
+                <h2>Lucid Stories</h2>
+                <div class="story-cards">
+                    <div class="story-card">
+                        <img src="./figma_images/image_36_287.png" alt="Story 1">
+                        <p class="date">3 Dec 2024</p>
+                        <h3>Eat my dust, Tesla</h3>
+                    </div>
+                    <div class="story-card">
+                        <img src="./figma_images/image_36_292.png" alt="Story 2">
+                        <p class="date">3 Dec 2024</p>
+                        <h3>Lucid Technology and Manufacturing Day</h3>
+                    </div>
+                    <div class="story-card">
+                        <img src="./figma_images/image_36_297.png" alt="Story 3">
+                        <p class="date">3 Dec 2024</p>
+                        <h3>5.0 miles / kwh: say hello to the World's most efficient car</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="signup-section">
+                <h2>Stay up to Speed on the latest at Lucid</h2>
+                <form>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="creativek@gmail.com">
+                </form>
+            </div>
+        </section>      -->
+    </main>
+
+    <footer>
+    <div class="footer-container">
+        <!-- Part 1: 主要链接和联系方式 -->
+        <div class="footer-main">
+            <div class="footer-logo">
+                <img src="./materials/image/flimaster_logo_transparent.png" alt="FilMaster Logo">
+                <p>Bridging Cinematic Principles and Generative AI for Automated Film Generation.</p>
+            </div>
+            <div class="footer-links">
+                <!-- 第一列: 核心资源 -->
+                <div class="link-column">
+                    <h4>Resources</h4>
+                    <a href="#paper">Read Paper</a>   <!-- 假设你有论文的PDF链接 -->
+                    <a href="#code">View Code</a>     <!-- 假设你有GitHub链接 -->
+                </div>
+                <!-- 第二列: 快速导航 -->
+                <div class="link-column">
+                    <h4>Navigation</h4>
+                    <a href="#hero">Top</a>
+                    <a href="#about">About</a>
+                    <a href="#part-c-content">Demos</a>
+                    <a href="#screen-01-part-d">Method</a>
+                </div>
+                <!-- 第三列: 联系我们 -->
+                <!-- <div class="link-column">
+                    <h4>Contact Us</h4>
+                    <a href="mailto:your_contact_email@example.com">Contact Email</a> 
+                    <a href="#hero">Our Team</a>
+                    <a href="#">Collaboration</a>
+                </div> -->
+            </div>
+        </div>
+
+        <!-- Part 2: 引用信息 (Citation) - 这是最重要的部分 -->
+        <div class="footer-citation">
+            <h4>Cite This Work</h4>
+            <div class="citation-box">
+ <!-- author={Kaiyi Huang and Yukun Huang and Xintao Wang and Zinan Lin and Xuefei Ning and Pengfei Wan and Di Zhang and Xihui Liu}, -->
+<pre><code>@misc{2025filmaster,
+    title={FilMaster: Bridging Cinematic Principles and Generative AI for Automated Film Generation}, <!-- author={Anonymous Author(s)}, -->
+    year={2025},
+    eprint={ARXIV_ID},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV} 
+}</code></pre>
+                <button id="copy-citation-btn">Copy BibTeX</button>
+            </div>
+        </div>
+
+        <!-- Part 3: 社交媒体和版权 -->
+        <div class="footer-bottom">
+            <div class="social-icons">
+                <!-- 建议替换成你们团队/实验室的社交媒体链接和图标 -->
+                <!-- <a href="https://github.com/KwaiVGI" target="_blank" title="GitHub"><img src="./materials/image/svg/github.png" alt="GitHub"></a> -->
+                <!-- <a href="https://github.com" target="_blank" title="GitHub"><img src="./materials/image/svg/github.png" alt="GitHub"></a> -->
+                <a href="" title="GitHub"><img src="./materials/image/svg/github.png" alt="GitHub"></a>
+                <!-- <a href="https://x.com/Kling_ai" target="_blank" title="Twitter/X"><img src="./materials/image/svg/twitter.png" alt="Twitter/X"></a> -->
+                <!-- <a href="https://x.com" target="_blank" title="Twitter/X"><img src="./materials/image/svg/twitter.png" alt="Twitter/X"></a> -->
+                <a href="" title="Twitter/X"><img src="./materials/image/svg/twitter.png" alt="Twitter/X"></a>
+                <!-- 如果有YouTube频道展示视频，强烈建议添加 -->
+                <!-- <a href="https://www.youtube.com/@Kling_ai" target="_blank" title="YouTube"><img src="./materials/image/svg/youtube.png" alt="YouTube"></a> -->
+                <!-- <a href="https://www.youtube.com" target="_blank" title="YouTube"><img src="./materials/image/svg/youtube.png" alt="YouTube"></a> -->
+                <a href=""  title="YouTube"><img src="./materials/image/svg/youtube.png" alt="YouTube"></a>
+            </div>
+            <p>© 2025 FilMaster Team. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ▼▼▼ 方案三：反馈模态框 HTML (放在 <footer> 之后) ▼▼▼ -->
+<div id="feedback-modal" class="modal-overlay">
+    <div class="modal-content">
+        <button id="close-modal-btn" class="close-btn">×</button>
+        <h3>Share Your Feedback</h3>
+        <p>We'd love to hear your thoughts on the FilMaster project!</p>
+        <form id="feedback-form" action="https://formspree.io/f/xovwwggg" method="POST">
+            <label for="feedback-email">Your Email (Optional)</label>
+            <input type="email" id="feedback-email" name="email">
+            
+            <label for="feedback-message">Your Feedback</label>
+            <textarea id="feedback-message" name="message" rows="5" required></textarea>
+            
+            <button type="submit" class="submit-btn">Send Feedback</button>
+        </form>
+    </div>
+</div>
+
+<!-- ▼▼▼ 全局图片预览框 (添加到 body 末尾) ▼▼▼ -->
+<div id="image-preview-tooltip" class="image-tooltip-global"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html> 

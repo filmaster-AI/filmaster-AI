@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Video Player</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #111; /* 使用深灰色，比纯黑柔和 */
+            font-family: 'SF Pro', 'Helvetica Neue', Arial, sans-serif;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .player-wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .player-header {
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+            background-color: rgba(0,0,0,0.1); /* 给头部一点背景区分 */
+        }
+
+        .video-title {
+            font-size: 16px;
+            font-weight: 400;
+            opacity: 0.8;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .close-button {
+            background-color: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .close-button:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* 视频容器，负责居中和内边距 */
+        .video-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 在视频周围留出一些空间 */
+            /* ▼▼▼ 修改这一行 ▼▼▼ */
+            /* 上0，左右2vw，下2vw */
+            padding: 0 2vw 2vw 2vw;
+            box-sizing: border-box;
+        }
+        
+        /* 视频本身，负责最大尺寸和外观 */
+        video {
+            width: 100%;
+            height: 100%;
+            
+            /* ▼▼▼ 电影感的核心代码 ▼▼▼ */
+            max-width: 1600px;  /* 限制最大宽度，避免在带鱼屏上过宽 */
+            max-height: 90vh;   /* 限制最大高度，确保总能看到标题栏 */
+            
+            object-fit: contain;
+            border-radius: 8px; /* 给视频加个小圆角，更现代 */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* 加一点阴影增加立体感 */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="player-wrapper">
+        <header class="player-header">
+            <span id="video-title" class="video-title">Loading video...</span>
+            <!-- 使用 button 并通过 JS 关闭，比 a 标签更可靠 -->
+            <button id="close-player-btn" class="close-button">Close Player</button>
+        </header>
+        <div class="video-container">
+            <video id="video-player" controls autoplay playsinline></video>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const videoPlayer = document.getElementById('video-player');
+            const pageTitle = document.getElementById('page-title');
+            const videoTitle = document.getElementById('video-title');
+            const closeButton = document.getElementById('close-player-btn');
+            
+            const params = new URLSearchParams(window.location.search);
+            const videoSrc = params.get('src');
+            // 从URL获取title参数，如果没有则使用默认标题
+            const titleText = params.get('title') || 'FilMaster Demo';
+
+            // 更新页面和视频标题
+            pageTitle.textContent = titleText;
+            videoTitle.textContent = titleText;
+
+            if (videoSrc) {
+                videoPlayer.src = decodeURIComponent(videoSrc);
+                videoPlayer.play().catch(e => {
+                    console.error("Video play failed:", e);
+                    // 可以在这里给用户一些提示
+                    const container = document.querySelector('.video-container');
+                    container.innerHTML = `<p style="text-align:center;">Could not play video. Please ensure you have interacted with the site first and try again.</p>`;
+                });
+            } else {
+                const container = document.querySelector('.video-container');
+                container.innerHTML = `<p style="text-align:center;">No video source provided.</p>`;
+            }
+            
+            // 为关闭按钮添加点击事件
+            if(closeButton) {
+                closeButton.addEventListener('click', () => {
+                    window.close();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
