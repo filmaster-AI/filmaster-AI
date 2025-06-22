@@ -1101,7 +1101,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             aboutSectionForScroll.scrollIntoView({
                 behavior: 'smooth', // 平滑滚动动画
-                block: 'center'      // 将目标元素的顶部与视口顶部对齐
+                // block: 'center'      // 将目标元素的顶部与视口顶部对齐
+                block: 'start'      // 将目标元素的顶部与视口顶部对齐
             });
         });
 
