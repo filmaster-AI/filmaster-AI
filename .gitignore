@@ -24,7 +24,7 @@ env/
 # Data & Large Files (根据你的项目添加)
 *.csv
 *.zip
-*.mp4
+# *.mp4
 data/
 models/
 
