@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 现在应用这个函数到你的所有视频上 ---
 
     // 1. 应用到哥斯拉视频，并尝试带声音播放
-    setupIntersectionObserverForVideo('gozilla-output-video', true); //true with audio, false without audio
+    setupIntersectionObserverForVideo('gozilla-output-video', false); //true with audio, false without audio
 
     // 2. 应用到小王子卡片视频，静音播放 (推荐用于背景/卡片视频)
     setupIntersectionObserverForVideo('card-video-little-prince', false);

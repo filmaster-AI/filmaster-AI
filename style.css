@@ -329,6 +329,7 @@ main {
 .godzilla-image-container {
     width: 100%; 
     margin-bottom: 32px;
+    
 }
 
 
@@ -342,15 +343,81 @@ main {
      margin-right: auto; /* Center image */
 }
 
-#gozilla-output .godzilla-image-container video {
+/* #gozilla-output .godzilla-image-container video {
      object-fit: cover; 
      width: 1080px; 
      height: 565px; 
      max-width: 100%; 
-     display: block; /* Ensure block for margin auto */
-     margin-left: auto; /* Center video */
-     margin-right: auto; /* Center video */
+     display: block; 
+     margin-left: auto; 
+     margin-right: auto;
+} */
+/* ======================================================= */
+/*      哥斯拉视频专属布局与悬停效果 (最终版)             */
+/* ======================================================= */
+
+/* 1. 设置哥斯拉视频的容器 */
+/*    我们让它的外观和行为像一个标准的视频卡片，但使用它自己的类名 */
+.godzilla-image-container.video-container-hover {
+    position: relative;
+    /* ★★★ 关键：给它一个固定的高度，和其他卡片保持一致，比如 440px 或 565px ★★★ */
+    /*     你可以根据需要调整这个值，但它必须是一个固定的高度。*/
+    height: 565px; 
+    
+    /* 其他样式，确保它看起来像个独立的卡片 */
+    width: 100%; /* 宽度占满父容器 #gozilla-output */
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #000;
+    margin: 0 auto; /* 确保它在 #gozilla-output 内居中 */
 }
+
+/* 2. 让哥斯拉视频本身填满这个新容器 */
+.godzilla-image-container.video-container-hover video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 视频会被裁剪以填充容器，保持比例 */
+    z-index: 1;
+}
+
+/* 3. 设置其内部遮罩层的样式 */
+/*    这部分和之前的逻辑一样 */
+.godzilla-image-container.video-container-hover .card-action-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 24px;
+    box-sizing: border-box;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* 4. 让按钮可以被点击 */
+.godzilla-image-container.video-container-hover .view-full-video-btn {
+    pointer-events: auto;
+}
+
+/* 5. 专属的悬停触发效果 */
+/*    注意选择器现在是 .godzilla-image-container.video-container-hover */
+.godzilla-image-container.video-container-hover:hover .card-action-overlay {
+    opacity: 1;
+}
+
+.godzilla-image-container.video-container-hover:hover .view-full-video-btn {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.1s;
+}
+
 
 
 .about-content, .godzilla-content {
@@ -786,8 +853,10 @@ footer {
     }
     #gozilla-input .godzilla-image-container img,
     #gozilla-output .godzilla-image-container video {
-        width: 100%; 
-        height: auto; 
+        width: 1080pt; 
+        height: 565pt; 
+        /* 为了消除视频下方可能存在的神秘空隙，加上这个 */
+        line-height: 0; 
     }
 }
 
@@ -2240,6 +2309,26 @@ footer {
     visibility: visible;
     transform: scale(1);
 }
+
+
+/* ======================================================= */
+/*      哥斯拉视频区域专属悬停效果 (Godzilla Hover Fix)      */
+/* ======================================================= */
+
+/* 当鼠标悬停在 .godzilla-image-container 上时，显示其内部的遮罩层 */
+.godzilla-image-container:hover .card-action-overlay {
+    opacity: 1;
+    
+}
+
+
+/* 同时，触发内部按钮的滑入动画 */
+.godzilla-image-container:hover .view-full-video-btn {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.1s; /* 保持动画效果一致 */
+}
+
 
 
 
